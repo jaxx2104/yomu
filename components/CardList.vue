@@ -37,10 +37,10 @@ export default {
 .card-list {
   width: 100%;
   margin: 0 auto;
-  padding: 8px 0;
+  padding: 0;
 }
 .card-info {
-  color: lightgrey;
+  color: #999;
   font-family: "Courier New", Courier, monospace;
   font-weight: 900;
   font-size: 0.75rem;

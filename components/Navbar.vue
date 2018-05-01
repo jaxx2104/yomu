@@ -4,8 +4,6 @@
       <img
         :src="icons.search"
         class="icon"
-        width="24px"
-        height="24px"
       >
     </div>
     <div class="brand">
@@ -15,8 +13,6 @@
       <img
         :src="icons.toggle"
         class="icon"
-        width="24px"
-        height="24px"
       >
     </div>
   </header>
@@ -44,32 +40,29 @@ export default {
 <style scoped>
 header {
   align-items: center;
-  background-color: white;
+  background-color: #fafafa;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   border-bottom: solid 0.5px #ccc;
 }
-.brand {
-  padding: 1.45rem 1.0875rem;
-}
+
+.brand,
 .menu {
   padding: 1.45rem 1.0875rem;
 }
 
-.icon path {
-  stroke: orangered;
-  color: orangered;
+.icon {
+  width: 20px;
 }
-
 @font-face {
   font-family: spokes;
   src: url("~/assets/spokes.ttf");
 }
 
 .brand h1 {
-  color: orangered;
+  color: #333;
   font-family: spokes, "Courier New", Courier, monospace;
   font-weight: 800;
   font-size: 1.25rem;
