@@ -1,16 +1,10 @@
 <template>
   <div class="content">
     <CardList
-      :title="rss.title"
-      :items="rss.entry"
-    />
-    <CardList
-      :title="rss.title"
-      :items="rss.entry"
-    />
-    <CardList
-      :title="rss.title"
-      :items="rss.entry"
+      v-for="(entry, index) in entries"
+      :key="index"
+      :title="entry.title"
+      :items="entry.entry"
     />
   </div>
 </template>
@@ -24,7 +18,7 @@ export default {
     CardList
   },
   computed: {
-    ...mapState(["rss"])
+    ...mapState(["entries"])
   }
 }
 </script>

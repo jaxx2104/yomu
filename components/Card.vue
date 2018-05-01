@@ -13,7 +13,7 @@ export default {
   components: {},
   props: {
     title: { type: String, default: "" },
-    image: { type: String, default: "image.jpg" }
+    image: { type: String, default: "load.jpg" }
   },
   data() {
     return {}

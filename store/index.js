@@ -1,25 +1,40 @@
+import { formatEntries, pickEntries } from "~/services/entries"
+import feeds from "~/assets/feeds.json"
+
 export const state = () => ({
-  rss: {
-    title: "title",
-    link: "http://aaa.com",
-    entry: []
-  }
+  isPrimary: true,
+  entries: [],
+  feeds: feeds
 })
 
+export const getters = {
+  currentFeeds: ({ feeds, isPrimary }) => {
+    return feeds[isPrimary ? 0 : 1]
+  }
+}
+
 export const mutations = {
-  SET_RSS(state, { title, entry, link }) {
-    state.rss = { title, entry, link }
+  SET_PRIMARY(state, isPrimary) {
+    state.isPrimary = isPrimary
+  },
+  SET_ENTRIES(state, entries) {
+    state.entries = entries
+  },
+  SET_FEEDS(state, feeds) {
+    state.feeds = feeds
   }
 }
 
 export const actions = {
-  setRss({ commit }, { title, entry, link }) {
-    entry = entry.map(item => {
-      const content = item.content.content
-      item.title = item.title.substr(0, 25)
-      item.image = content.match(/<img.*?src=("|')(.*?)("|').*?>/)[2]
-      return item
-    })
-    commit("SET_RSS", { title, entry, link })
+  togglePrimary({ commit }, isPrimary) {
+    commit("SET_PRIMARY", !isPrimary)
+  },
+  setEntries({ commit }, entries) {
+    entries = pickEntries(entries)
+    entries = formatEntries(entries)
+    commit("SET_ENTRIES", entries)
+  },
+  setFeeds({ commit }, feeds) {
+    commit("SET_FEEDS", feeds)
   }
 }

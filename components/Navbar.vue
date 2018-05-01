@@ -9,7 +9,10 @@
     <div class="brand">
       <h1>{{ title }}</h1>
     </div>
-    <div class="menu">
+    <div
+      class="menu"
+      @click="onClick"
+    >
       <img
         :src="icons.toggle"
         class="icon"
@@ -19,6 +22,8 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex"
+
 import search from "~/assets/search.svg"
 import toggle from "~/assets/toggle.svg"
 
@@ -32,6 +37,15 @@ export default {
         toggle
       }
     }
+  },
+  computed: {
+    ...mapState(["isPrimary"])
+  },
+  methods: {
+    ...mapActions(["togglePrimary"]),
+    onClick() {
+      this.togglePrimary(this.isPrimary)
+    }
   }
 }
 </script>
@@ -41,11 +55,14 @@ export default {
 header {
   align-items: center;
   background-color: #fafafa;
+  border-bottom: solid 0.5px #ccc;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 0.25rem;
-  border-bottom: solid 0.5px #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .brand,
@@ -56,6 +73,7 @@ header {
 .icon {
   width: 20px;
 }
+
 @font-face {
   font-family: spokes;
   src: url("~/assets/spokes.ttf");

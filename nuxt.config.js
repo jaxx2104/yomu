@@ -9,12 +9,15 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "Nuxt.js project" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "apple-touch-startup-image", href: "/icon.png" }
+    ]
   },
   /*
   ** Customize the progress bar color
   */
-  loading: { color: "#3B8070" },
+  loading: { color: "#E91E63" },
   /*
   ** Build configuration
   */
@@ -37,6 +40,10 @@ module.exports = {
   manifest: {
     name: "yomu",
     lang: "ja"
+  },
+  meta: {
+    mobileAppIOS: true,
+    appleStatusBarStyle: "default"
   },
   plugins: ["~/plugins/vue-lazyload"]
 }

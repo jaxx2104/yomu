@@ -6,37 +6,34 @@
 </template>
 
 <script>
-// import qs from "queryString"
-import { mapActions } from "vuex"
+import { mapGetters, mapActions } from "vuex"
 
 import Navbar from "~/components/Navbar"
 import Content from "~/components/Content"
-import data from "~/assets/data.json"
+import { getFeed, getFeedDummy } from "~/services/feeds"
 
 export default {
   components: {
     Content,
     Navbar
   },
+  computed: {
+    ...mapGetters(["currentFeeds"])
+  },
   created() {
     this.load()
   },
   methods: {
-    ...mapActions(["setRss"]),
+    ...mapActions(["setEntries", "setFeeds"]),
     async load() {
-      /*
-      const baseUrl = "http://query.yahooapis.com/v1/public/yql?";
-      const loadUrl = "http://www.theverge.com/rss/full.xml"
-      const options = qs.stringify({
-        q: `select * from xml where url in ('${loadUrl}')`,
-        format: "json"
-      });
-      const url = `${baseUrl}${options}`
-      const result = await this.$axios.$get(url)
-      */
-      const result = data
-      const { title, entry, link } = result.query.results.feed
-      this.setRss({ title, entry, link })
+      const promiseList = this.currentFeeds.map(
+        ({ url }) =>
+          process.env.DEBUG !== true
+            ? getFeed(this.$axios, url)
+            : getFeedDummy()
+      )
+      const entries = await Promise.all(promiseList)
+      this.setEntries(entries)
     }
   }
 }
