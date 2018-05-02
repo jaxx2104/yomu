@@ -1,4 +1,5 @@
-import { formatEntries, pickEntries } from "~/services/entries"
+import { getFeed, getFeedDummy } from "~/services/feeds"
+import { formatEntries } from "~/services/entries"
 import feeds from "~/assets/feeds.json"
 
 export const state = () => ({
@@ -29,8 +30,15 @@ export const actions = {
   togglePrimary({ commit }, isPrimary) {
     commit("SET_PRIMARY", !isPrimary)
   },
+  async updateEntries({ commit }, currentFeeds) {
+    const promiseList = currentFeeds.map(
+      ({ url }) => (process.env.DEBUG !== true ? getFeed(url) : getFeedDummy())
+    )
+    let entries = await Promise.all(promiseList)
+    entries = formatEntries(entries)
+    commit("SET_ENTRIES", entries)
+  },
   setEntries({ commit }, entries) {
-    entries = pickEntries(entries)
     entries = formatEntries(entries)
     commit("SET_ENTRIES", entries)
   },

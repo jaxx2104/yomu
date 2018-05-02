@@ -1,11 +1,8 @@
-export const pickEntries = entries => {
-  return entries.map(result => {
-    const { title, link, entry } = result.query.results.feed
+export const formatEntries = entries => {
+  entries = entries.map(result => {
+    const { title, link, entry } = result.data.query.results.feed
     return { title, link, entry }
   })
-}
-
-export const formatEntries = entries => {
   return entries.map(entry => {
     entry.entry = entry.entry.map(item => {
       const { content } = item.content || item.summary || ""

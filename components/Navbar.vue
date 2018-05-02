@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex"
+import { mapActions, mapGetters, mapState } from "vuex"
 
 import search from "~/assets/search.svg"
 import toggle from "~/assets/toggle.svg"
@@ -39,12 +39,15 @@ export default {
     }
   },
   computed: {
-    ...mapState(["isPrimary"])
+    ...mapState(["isPrimary"]),
+    ...mapGetters(["currentFeeds"])
   },
   methods: {
-    ...mapActions(["togglePrimary"]),
+    ...mapActions(["togglePrimary", "updateEntries"]),
+
     onClick() {
       this.togglePrimary(this.isPrimary)
+      this.updateEntries(this.currentFeeds)
     }
   }
 }
@@ -65,9 +68,29 @@ header {
   z-index: 1;
 }
 
-.brand,
-.menu {
+.brand {
   padding: 1.45rem 1.0875rem;
+}
+
+.menu {
+  background-position: center;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 1rem 1.0875rem;
+  transition: background 0.8s;
+}
+
+.menu:hover {
+  border-radius: 50%;
+  background: #eee radial-gradient(circle, transparent 1%, #eee 1%)
+    center/15000%;
+}
+
+.menu:active {
+  background-color: #fff;
+  background-size: 100%;
+  border-radius: 50%;
+  transition: background 0s;
 }
 
 .icon {
