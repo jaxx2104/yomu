@@ -31,8 +31,10 @@ export const actions = {
     commit("SET_PRIMARY", !isPrimary)
   },
   async updateEntries({ commit }, currentFeeds) {
+    /* eslint-disable */
+    console.log(process.env.DEBUG_MODE)
     const promiseList = currentFeeds.map(
-      ({ url }) => (process.env.DEBUG !== true ? getFeed(url) : getFeedDummy())
+      ({ url }) => (process.env.DEBUG_MODE ? getFeedDummy() : getFeed(url))
     )
     let entries = await Promise.all(promiseList)
     entries = formatEntries(entries)

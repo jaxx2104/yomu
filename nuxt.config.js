@@ -1,4 +1,8 @@
 module.exports = {
+  env: {
+    DEBUG_MODE: process.env.DEBUG_MODE || false
+  },
+
   /*
   ** Headers of the page
   */

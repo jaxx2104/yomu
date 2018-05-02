@@ -1,6 +1,8 @@
 export const formatEntries = entries => {
   entries = entries.map(result => {
-    const { title, link, entry } = result.data.query.results.feed
+    /* eslint-disable */
+    const data = result.data || result
+    const { title, link, entry } = data.query.results.feed
     return { title, link, entry }
   })
   return entries.map(entry => {
