@@ -3,14 +3,19 @@
     <div class="card-info">
       {{ title }}
     </div>
-    <div class="card-column">
+    <transition-group
+      name="list"
+      class="card-column"
+      tag="div"
+      appear
+    >
       <Card
         v-for="(item, index) in items"
         :key="index"
         :title="item.title"
         :image="item.image"
       />
-    </div>
+    </transition-group>
   </div>
 </template>
 

@@ -20,4 +20,15 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+.list-enter-active,
+.list-leave-active {
+  transition: opacity 1s;
+}
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+}
+.list-move {
+  transition: transform 1s;
+}
 </style>

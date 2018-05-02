@@ -1,12 +1,17 @@
 <template>
-  <div class="content">
+  <transition-group
+    name="list"
+    class="content"
+    tag="div"
+    appear
+  >
     <CardList
       v-for="(entry, index) in entries"
       :key="index"
       :title="entry.title"
       :items="entry.entry"
     />
-  </div>
+  </transition-group>
 </template>
 
 <script>

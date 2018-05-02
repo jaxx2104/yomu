@@ -2,7 +2,7 @@
   <header>
     <div class="menu">
       <img
-        :src="icons.search"
+        src="/icons/search.svg"
         class="icon"
       >
     </div>
@@ -14,7 +14,7 @@
       @click="onClick"
     >
       <img
-        :src="icons.toggle"
+        src="/icons/toggle.svg"
         class="icon"
       >
     </div>
@@ -24,18 +24,11 @@
 <script>
 import { mapActions, mapGetters, mapState } from "vuex"
 
-import search from "~/assets/search.svg"
-import toggle from "~/assets/toggle.svg"
-
 export default {
   name: "Navibar",
   data() {
     return {
-      title: "Yomu",
-      icons: {
-        search,
-        toggle
-      }
+      title: "Yomu"
     }
   },
   computed: {
@@ -46,14 +39,13 @@ export default {
     ...mapActions(["togglePrimary", "updateEntries"]),
 
     onClick() {
-      this.togglePrimary(this.isPrimary)
+      this.togglePrimary()
       this.updateEntries(this.currentFeeds)
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 header {
   align-items: center;
@@ -72,6 +64,20 @@ header {
   padding: 1.45rem 1.0875rem;
 }
 
+@font-face {
+  font-family: spokes;
+  src: url("~/assets/spokes.ttf");
+}
+
+.brand h1 {
+  color: #e91e63;
+  font-family: spokes;
+  font-weight: 900;
+  font-size: 1.25rem;
+  text-decoration: none;
+  margin: 0;
+}
+
 .menu {
   background-position: center;
   border-radius: 50%;
@@ -82,7 +88,7 @@ header {
 
 .menu:hover {
   border-radius: 50%;
-  background: #eee radial-gradient(circle, transparent 1%, #eee 1%)
+  background: #fce4ec radial-gradient(circle, transparent 1%, #fce4ec 1%)
     center/15000%;
 }
 
@@ -95,19 +101,5 @@ header {
 
 .icon {
   width: 20px;
-}
-
-@font-face {
-  font-family: spokes;
-  src: url("~/assets/spokes.ttf");
-}
-
-.brand h1 {
-  color: #333;
-  font-family: spokes, "Courier New", Courier, monospace;
-  font-weight: 800;
-  font-size: 1.25rem;
-  text-decoration: none;
-  margin: 0;
 }
 </style>

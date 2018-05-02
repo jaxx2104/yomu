@@ -2,30 +2,38 @@
   <div id="inspire">
     <Navbar />
     <Content />
+    <Loading v-show="isLoading"/>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex"
+import { mapActions, mapGetters, mapState } from "vuex"
 
-import Navbar from "~/components/Navbar"
 import Content from "~/components/Content"
+import Loading from "~/components/Loading"
+import Navbar from "~/components/Navbar"
 
 export default {
   components: {
     Content,
-    Navbar
+    Navbar,
+    Loading
   },
   computed: {
-    ...mapGetters(["currentFeeds"])
+    ...mapState(["isLoading"]),
+    ...mapGetters(["currentFeeds", "countEntries"])
   },
   created() {
-    this.load()
+    this.setLoading(true)
+    this.load().then(() => {
+      this.setLoading(false)
+    })
   },
+  mounted() {},
   methods: {
-    ...mapActions(["updateEntries", "setEntries", "setFeeds"]),
+    ...mapActions(["updateEntries", "setEntries", "setFeeds", "setLoading"]),
     load() {
-      this.updateEntries(this.currentFeeds)
+      return this.updateEntries(this.currentFeeds)
     }
   }
 }
