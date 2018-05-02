@@ -49,6 +49,8 @@ export default {
   font-family: "Courier New", Courier, monospace;
   font-weight: 900;
   font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
   padding: 4px 8px;
 }
 .card-column {

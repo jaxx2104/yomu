@@ -49,7 +49,7 @@ export default {
 <style scoped>
 header {
   align-items: center;
-  background-color: #fafafa;
+  background-color: #fff;
   border-bottom: solid 0.5px #ccc;
   display: flex;
   flex-direction: row;
