@@ -1,5 +1,8 @@
 <template>
-  <div class="card-tile">
+  <div
+    class="card-tile"
+    @click="onClick"
+  >
     <div
       v-lazy:background-image="image"
       class="card-image"
@@ -17,6 +20,9 @@ export default {
   },
   data() {
     return {}
+  },
+  methods: {
+    onClick() {}
   }
 }
 </script>
@@ -32,6 +38,16 @@ export default {
   width: 200px;
   height: 200px;
   background-size: cover;
+  background-position: center;
+}
+
+.card-image:hover {
+  transition: all 0.5s;
+  transform: scale(0.98);
+}
+.card-image:active {
+  transition: all 0.25s;
+  transform: scale(0.9);
 }
 
 .card-title {
@@ -53,20 +69,6 @@ export default {
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.card-image[lazy="loading"] {
-}
-.card-image[lazy="error"] {
-  /*your style here*/
-}
 .card-image[lazy="loaded"] {
   animation-duration: 1.5s;
   animation-fill-mode: both;

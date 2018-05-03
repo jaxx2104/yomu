@@ -21,17 +21,14 @@ export default {
   },
   computed: {
     ...mapState(["isLoading"]),
-    ...mapGetters(["currentFeeds", "countEntries"])
+    ...mapGetters(["currentFeeds"])
   },
   created() {
-    this.setLoading(true)
-    this.load().then(() => {
-      this.setLoading(false)
-    })
+    this.load()
   },
   mounted() {},
   methods: {
-    ...mapActions(["updateEntries", "setEntries", "setFeeds", "setLoading"]),
+    ...mapActions(["updateEntries"]),
     load() {
       return this.updateEntries(this.currentFeeds)
     }

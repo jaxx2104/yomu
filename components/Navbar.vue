@@ -64,11 +64,6 @@ header {
   padding: 1.45rem 1.0875rem;
 }
 
-@font-face {
-  font-family: spokes;
-  src: url("~/assets/spokes.ttf");
-}
-
 .brand h1 {
   color: #e91e63;
   font-family: spokes;

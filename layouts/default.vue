@@ -31,4 +31,18 @@ html {
 .list-move {
   transition: transform 1s;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: spokes;
+  src: url("~/assets/spokes.ttf");
+}
 </style>

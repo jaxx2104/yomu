@@ -41,12 +41,14 @@ export const actions = {
     commit("SET_LOADING", isLoading)
   },
   async updateEntries({ commit }, currentFeeds) {
+    commit("SET_LOADING", true)
     const promiseList = currentFeeds.map(
       ({ url }) => (process.env.DEBUG_MODE ? getFeedDummy() : getFeed(url))
     )
     let entries = await Promise.all(promiseList)
     entries = formatEntries(entries)
     commit("SET_ENTRIES", entries)
+    commit("SET_LOADING", false)
   },
   setEntries({ commit }, entries) {
     entries = formatEntries(entries)
