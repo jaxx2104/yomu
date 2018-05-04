@@ -3,18 +3,22 @@ import { formatEntries } from "~/services/entries"
 import feeds from "~/assets/feeds.json"
 
 export const state = () => ({
-  isPrimary: true,
-  isLoading: false,
   entries: [],
-  feeds: feeds
+  feeds: feeds,
+  isLoading: false,
+  isPrimary: true,
+  selected: null
 })
 
 export const getters = {
-  isLoadEntries: ({ entries }) => {
+  countEntries: ({ entries }) => {
     return entries.length === 0
   },
   currentFeeds: ({ feeds, isPrimary }) => {
     return feeds[isPrimary ? 0 : 1]
+  },
+  currentEntry: ({ entries, selected }) => {
+    return selected ? entries[selected.row].entry[selected.column] : null
   }
 }
 
@@ -24,6 +28,9 @@ export const mutations = {
   },
   SET_LOADING(state, isLoading) {
     state.isLoading = isLoading || !state.isLoading
+  },
+  SET_SELECTED(state, selected) {
+    state.selected = selected
   },
   SET_ENTRIES(state, entries) {
     state.entries = entries
@@ -39,6 +46,9 @@ export const actions = {
   },
   setLoading({ commit }, isLoading) {
     commit("SET_LOADING", isLoading)
+  },
+  setSelected({ commit }, selected) {
+    commit("SET_SELECTED", selected)
   },
   async updateEntries({ commit }, currentFeeds) {
     commit("SET_LOADING", true)

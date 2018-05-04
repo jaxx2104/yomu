@@ -1,46 +1,54 @@
 <template>
   <header>
-    <div class="menu">
-      <img
-        src="/icons/search.svg"
-        class="icon"
-      >
-    </div>
+    <Icon
+      v-if="menuLeft.icon"
+      :action="menuLeft.action"
+      :icon="menuLeft.icon"
+      class-name="menu"
+    />
     <div class="brand">
       <h1>{{ title }}</h1>
     </div>
-    <div
-      class="menu"
-      @click="onClick"
-    >
-      <img
-        src="/icons/toggle.svg"
-        class="icon"
-      >
-    </div>
+    <Icon
+      v-if="menuRight.icon"
+      :action="menuRight.action"
+      :icon="menuRight.icon"
+      class-name="menu"
+    />
   </header>
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from "vuex"
+import Icon from "~/components/Icon"
 
 export default {
-  name: "Navibar",
-  data() {
-    return {
-      title: "Yomu"
-    }
+  name: "Navbar",
+  components: {
+    Icon
   },
-  computed: {
-    ...mapState(["isPrimary"]),
-    ...mapGetters(["currentFeeds"])
-  },
-  methods: {
-    ...mapActions(["togglePrimary", "updateEntries"]),
-
-    onClick() {
-      this.togglePrimary()
-      this.updateEntries(this.currentFeeds)
+  props: {
+    title: { type: String, default: "title" },
+    menuLeft: {
+      type: Object,
+      default: () => {
+        return {
+          icon: null,
+          action: () => {
+            return
+          }
+        }
+      }
+    },
+    menuRight: {
+      type: Object,
+      default: () => {
+        return {
+          icon: null,
+          action: () => {
+            return
+          }
+        }
+      }
     }
   }
 }
@@ -54,7 +62,6 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 0.25rem;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -71,30 +78,5 @@ header {
   font-size: 1.25rem;
   text-decoration: none;
   margin: 0;
-}
-
-.menu {
-  background-position: center;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 1rem 1.0875rem;
-  transition: background 0.8s;
-}
-
-.menu:hover {
-  border-radius: 50%;
-  background: #fce4ec radial-gradient(circle, transparent 1%, #fce4ec 1%)
-    center/15000%;
-}
-
-.menu:active {
-  background-color: #fff;
-  background-size: 100%;
-  border-radius: 50%;
-  transition: background 0s;
-}
-
-.icon {
-  width: 20px;
 }
 </style>

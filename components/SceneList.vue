@@ -8,6 +8,7 @@
     <CardList
       v-for="(entry, index) in entries"
       :key="index"
+      :row="index"
       :title="entry.title"
       :items="entry.entry"
     />

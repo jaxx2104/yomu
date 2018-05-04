@@ -1,7 +1,11 @@
 <template>
-  <div id="inspire">
-    <Navbar />
-    <Content />
+  <div id="top">
+    <Navbar
+      :menu-left="{icon: 'search', action: onSearch }"
+      :menu-right="{icon: 'toggle', action: onToggle }"
+      title="Yomu"
+    />
+    <SceneList />
     <Loading v-show="isLoading"/>
   </div>
 </template>
@@ -9,15 +13,15 @@
 <script>
 import { mapActions, mapGetters, mapState } from "vuex"
 
-import Content from "~/components/Content"
 import Loading from "~/components/Loading"
 import Navbar from "~/components/Navbar"
+import SceneList from "~/components/SceneList"
 
 export default {
   components: {
-    Content,
+    Loading,
     Navbar,
-    Loading
+    SceneList
   },
   computed: {
     ...mapState(["isLoading"]),
@@ -28,9 +32,16 @@ export default {
   },
   mounted() {},
   methods: {
-    ...mapActions(["updateEntries"]),
+    ...mapActions(["togglePrimary", "updateEntries"]),
     load() {
       return this.updateEntries(this.currentFeeds)
+    },
+    onSearch() {
+      alert("In development 📦")
+    },
+    onToggle() {
+      this.togglePrimary()
+      this.updateEntries(this.currentFeeds)
     }
   }
 }

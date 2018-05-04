@@ -45,4 +45,22 @@ html {
   font-family: spokes;
   src: url("~/assets/spokes.ttf");
 }
+
+.article {
+  color: #495057;
+}
+.article > p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+
+.article > h2 {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100%;
+}
 </style>

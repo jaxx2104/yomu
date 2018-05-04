@@ -12,6 +12,8 @@
       <Card
         v-for="(item, index) in items"
         :key="index"
+        :row="row"
+        :column="index"
         :title="item.title"
         :image="item.image"
       />
@@ -28,6 +30,7 @@ export default {
   },
   props: {
     title: { type: String, default: "" },
+    row: { type: Number, default: 0 },
     items: {
       type: Array,
       default: () => {

@@ -12,17 +12,29 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex"
+
 export default {
   components: {},
   props: {
+    column: { type: Number, default: 0 },
+    row: { type: Number, default: 0 },
     title: { type: String, default: "" },
     image: { type: String, default: "load.jpg" }
   },
   data() {
     return {}
   },
+  computed: {
+    ...mapState(["entries"])
+  },
   methods: {
-    onClick() {}
+    ...mapActions(["setSelected"]),
+
+    onClick() {
+      this.setSelected({ row: this.row, column: this.column })
+      this.$router.push("detail")
+    }
   }
 }
 </script>
@@ -52,8 +64,9 @@ export default {
 
 .card-title {
   color: white;
-  padding: 8px;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
   font-size: 1.25rem;
+  padding: 8px;
   user-select: none;
 }
 
