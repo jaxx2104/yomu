@@ -4,7 +4,7 @@
       {{ title }}
     </div>
     <transition-group
-      name="list"
+      name="fade"
       class="card-column"
       tag="div"
       appear

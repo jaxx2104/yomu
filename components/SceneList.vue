@@ -1,6 +1,6 @@
 <template>
   <transition-group
-    name="list"
+    name="fade"
     class="content"
     tag="div"
     appear

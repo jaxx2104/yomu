@@ -1,24 +1,34 @@
 <template>
   <div class="scene-detail">
-    <img
-      :src="detail ? detail.image : image"
-      class="detail-image"
+    <transition
+      name="fade"
+      appear>
+      <img
+        :src="detail ? detail.image : image"
+        class="detail-image"
+      >
+    </transition>
+    <transition
+      name="slide"
+      appear
     >
-    <div class="detail-wrap">
-      <div class="detail-info">
-        <h1 class="detail-title">{{ detail ? detail.title : title }}</h1>
-        <time class="detail-date">{{ detail ? detail.date : date }}</time>
+      <div class="detail-wrap">
+        <div class="detail-info">
+          <h1 class="detail-title">{{ detail ? detail.title : title }}</h1>
+          <time class="detail-date">{{ detail ? detail.date : date }}</time>
+        </div>
+        <div
+          class="detail-content article"
+          v-html="detail ? detail.content : content"
+        />
+        <Button
+          :action="onMore"
+          label="MORE"
+        />
       </div>
-      <div
-        class="detail-content article"
-        v-html="detail ? detail.content : content"
-      />
-      <Button
-        :action="onMore"
-        label="MORE"
-      />
-    </div>
+    </transition>
   </div>
+
 </template>
 
 <script>

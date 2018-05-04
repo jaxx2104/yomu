@@ -5,6 +5,7 @@
   >
     <div
       v-lazy:background-image="image"
+      :key="image"
       class="card-image"
     >
       <h2 class="card-title">{{ title }}</h2>

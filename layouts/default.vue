@@ -20,16 +20,31 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-.list-enter-active,
-.list-leave-active {
-  transition: opacity 1s;
+
+.fade-enter-active,
+.fade-leave-active {
+  opacity: 1;
+  transition: 0.5s ease-out;
 }
-.list-enter,
-.list-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
-.list-move {
+.fade-move {
   transition: transform 1s;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  top: 0;
+  opacity: 1;
+  position: relative;
+  transition: 0.5s ease-out;
+}
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+  top: 40px;
 }
 
 @keyframes fadeIn {
@@ -55,7 +70,11 @@ html {
   margin: 12px 0;
 }
 
-.article > h2 {
+.article a {
+  color: #e91e63;
+}
+
+.article h2 {
   padding-top: 10px;
   margin-bottom: 20px;
 }
