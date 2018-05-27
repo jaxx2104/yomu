@@ -81,7 +81,7 @@ module.exports = {
       }
     }
   },
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxtjs/sentry"],
   manifest: {
     name: "yomu",
     lang: "ja"
