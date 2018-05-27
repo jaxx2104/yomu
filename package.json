@@ -1,36 +1,55 @@
 {
-  "name": "yomu",
-  "version": "1.0.0",
-  "description": "Nuxt.js project",
-  "author": "jaxx2104 <jaxx2104@gmail.com>",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "storybook": "start-storybook -s ./ -c .storybook -p 9001 ",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
-  },
-  "dependencies": {
-    "nuxt": "^1.0.0"
-  },
-  "devDependencies": {
-    "@nuxtjs/axios": "^5.3.1",
-    "@nuxtjs/pwa": "^2.0.8",
-    "@nuxtjs/sentry": "^1.0.3",
-    "@storybook/addon-knobs": "^3.4.6",
-    "@storybook/addon-viewport": "^3.4.6",
-    "@storybook/vue": "^3.4.6",
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-friendly-formatter": "^4.0.0",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-vue": "^4.0.0",
-    "raven-js": "^3.25.2",
-    "vue-lazyload": "^1.2.3"
-  }
+ "ava": {
+  "sources": [
+   "**/*.test.{js,jsx}"
+  ],
+  "cache": true,
+  "concurrency": 5,
+  "require": [
+   "./test/helpers/setup.js"
+  ]
+ },
+ "name": "yomu",
+ "version": "1.0.0",
+ "description": "Nuxt.js project",
+ "author": "jaxx2104 <jaxx2104@gmail.com>",
+ "private": true,
+ "scripts": {
+  "dev": "nuxt",
+  "build": "nuxt build",
+  "start": "nuxt start",
+  "storybook": "start-storybook -s ./ -c .storybook -p 9001 ",
+  "generate": "nuxt generate",
+  "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+  "precommit": "npm run lint",
+  "test": "ava --tap | tap-nyan"
+ },
+ "dependencies": {
+  "nuxt": "^1.0.0"
+ },
+ "devDependencies": {
+  "@nuxtjs/axios": "^5.3.1",
+  "@nuxtjs/pwa": "^2.0.8",
+  "@nuxtjs/sentry": "^1.0.3",
+  "@storybook/addon-knobs": "^3.4.6",
+  "@storybook/addon-viewport": "^3.4.6",
+  "@storybook/vue": "^3.4.6",
+  "@vue/test-utils": "^1.0.0-beta.16",
+  "ava": "^1.0.0-beta.4",
+  "babel-eslint": "^8.2.1",
+  "babel-plugin-istanbul": "^4.1.6",
+  "browser-env": "^3.2.5",
+  "eslint": "^4.15.0",
+  "eslint-config-prettier": "^2.9.0",
+  "eslint-friendly-formatter": "^4.0.0",
+  "eslint-loader": "^1.7.1",
+  "eslint-plugin-prettier": "^2.6.0",
+  "eslint-plugin-vue": "^4.0.0",
+  "istanbul": "^0.4.5",
+  "require-extension-hooks": "^0.3.2",
+  "require-extension-hooks-babel": "^0.1.1",
+  "require-extension-hooks-vue": "^1.0.0",
+  "tap-nyan": "^1.1.0",
+  "vue-lazyload": "^1.2.3"
+ }
 }
