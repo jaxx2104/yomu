@@ -302,7 +302,7 @@
     pretty-ms "^0.2.1"
     text-table "^0.2.0"
 
-"@nuxtjs/axios@^5.3.1":
+"@nuxtjs/axios@5.3.1":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@nuxtjs/axios/-/axios-5.3.1.tgz#9f9e6c817dae44c16955af659f6d5ac2a8085148"
   dependencies:
@@ -336,7 +336,7 @@
     consola "^1.1.4"
     http-proxy-middleware "^0.18.0"
 
-"@nuxtjs/pwa@^2.0.8":
+"@nuxtjs/pwa@2.0.8":
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-2.0.8.tgz#0e36ea1e3a63c1531f4e9e6b1d03a9390b09f8b5"
   dependencies:
@@ -345,7 +345,7 @@
     "@nuxtjs/meta" "^2.2.1"
     "@nuxtjs/workbox" "^2.2.0"
 
-"@nuxtjs/sentry@^1.0.3":
+"@nuxtjs/sentry@1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@nuxtjs/sentry/-/sentry-1.0.3.tgz#e7de4231fd90815cb7bba9dda297f6edf56c067c"
   dependencies:
@@ -366,7 +366,7 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
-"@storybook/addon-knobs@^3.4.6":
+"@storybook/addon-knobs@3.4.6":
   version "3.4.6"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-3.4.6.tgz#900586a218e12540256884af7a0ba1f684f1f436"
   dependencies:
@@ -383,7 +383,7 @@
     react-textarea-autosize "^5.2.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-viewport@^3.4.6":
+"@storybook/addon-viewport@3.4.6":
   version "3.4.6"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-3.4.6.tgz#42a3fd095c7ef4f2c35c18ce3e946faf4ab70507"
   dependencies:
@@ -524,7 +524,7 @@
     react-split-pane "^0.1.77"
     react-treebeard "^2.1.0"
 
-"@storybook/vue@^3.4.6":
+"@storybook/vue@3.4.6":
   version "3.4.6"
   resolved "https://registry.yarnpkg.com/@storybook/vue/-/vue-3.4.6.tgz#e3a5fa2436ca2b643a04bc2804a72c4a2b34524b"
   dependencies:
@@ -564,7 +564,7 @@
   version "10.1.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.1.3.tgz#5c16980936c4e3c83ce64e8ed71fb37bd7aea135"
 
-"@vue/test-utils@^1.0.0-beta.16":
+"@vue/test-utils@1.0.0-beta.16":
   version "1.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-1.0.0-beta.16.tgz#dcf7a30304391422e382b5f97db6eb9508112906"
   dependencies:
@@ -937,7 +937,7 @@ autoprefixer@^7.1.1, autoprefixer@^7.2.5, autoprefixer@^7.2.6:
     postcss "^6.0.17"
     postcss-value-parser "^3.2.3"
 
-ava@^1.0.0-beta.4:
+ava@1.0.0-beta.4:
   version "1.0.0-beta.4"
   resolved "https://registry.yarnpkg.com/ava/-/ava-1.0.0-beta.4.tgz#67602aab01e8bf97bfd0a7f80e384655dd369dd0"
   dependencies:
@@ -1074,7 +1074,7 @@ babel-core@^6.21.0, babel-core@^6.26.0:
     slash "^1.0.0"
     source-map "^0.5.7"
 
-babel-eslint@^8.2.1:
+babel-eslint@8.2.3:
   version "8.2.3"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-8.2.3.tgz#1a2e6681cc9bc4473c32899e59915e19cd6733cf"
   dependencies:
@@ -1280,7 +1280,7 @@ babel-plugin-espower@3.0.0-beta.1:
     espurify "^1.6.0"
     estraverse "^4.1.1"
 
-babel-plugin-istanbul@^4.1.6:
+babel-plugin-istanbul@4.1.6:
   version "4.1.6"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-4.1.6.tgz#36c59b2192efce81c5b378321b74175add1c9a45"
   dependencies:
@@ -2121,7 +2121,7 @@ brorand@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
 
-browser-env@^3.2.5:
+browser-env@3.2.5:
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/browser-env/-/browser-env-3.2.5.tgz#4345b8094413552e1e32c0c7b048b85d90965cc1"
   dependencies:
@@ -3572,13 +3572,13 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-prettier@^2.9.0:
+eslint-config-prettier@2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.9.0.tgz#5ecd65174d486c22dff389fe036febf502d468a3"
   dependencies:
     get-stdin "^5.0.1"
 
-eslint-friendly-formatter@^4.0.0:
+eslint-friendly-formatter@4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/eslint-friendly-formatter/-/eslint-friendly-formatter-4.0.1.tgz#27d504dc837f7caddbf201b2e84a4ee730ba3efa"
   dependencies:
@@ -3589,7 +3589,7 @@ eslint-friendly-formatter@^4.0.0:
     strip-ansi "^4.0.0"
     text-table "^0.2.0"
 
-eslint-loader@^2.0.0:
+eslint-loader@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/eslint-loader/-/eslint-loader-2.0.0.tgz#d136619b5c684e36531ffc28c60a56e404608f5d"
   dependencies:
@@ -3599,14 +3599,14 @@ eslint-loader@^2.0.0:
     object-hash "^1.1.4"
     rimraf "^2.6.1"
 
-eslint-plugin-prettier@^2.6.0:
+eslint-plugin-prettier@2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.6.0.tgz#33e4e228bdb06142d03c560ce04ec23f6c767dd7"
   dependencies:
     fast-diff "^1.1.1"
     jest-docblock "^21.0.0"
 
-eslint-plugin-vue@^4.0.0:
+eslint-plugin-vue@4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-4.5.0.tgz#09d6597f4849e31a3846c2c395fccf17685b69c3"
   dependencies:
@@ -3623,7 +3623,7 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@^4.15.0:
+eslint@4.19.1:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   dependencies:
@@ -5244,7 +5244,7 @@ istanbul-lib-instrument@^1.10.1:
     istanbul-lib-coverage "^1.2.0"
     semver "^5.3.0"
 
-istanbul@^0.4.5:
+istanbul@0.4.5:
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/istanbul/-/istanbul-0.4.5.tgz#65c7d73d4c4da84d4f3ac310b918fb0b8033733b"
   dependencies:
@@ -6258,7 +6258,7 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nuxt@^1.0.0:
+nuxt@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-1.4.0.tgz#66df9ede68daf2ef4cfbcc329da7dda0003e0420"
   dependencies:
@@ -8143,14 +8143,14 @@ require-directory@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
 
-require-extension-hooks-babel@^0.1.1:
+require-extension-hooks-babel@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/require-extension-hooks-babel/-/require-extension-hooks-babel-0.1.1.tgz#15b7266c2fc01694bf9a83a54d1ab08ceeb664af"
   dependencies:
     babel-core "^6.21.0"
     babel-preset-env "^1.1.8"
 
-require-extension-hooks-vue@^1.0.0:
+require-extension-hooks-vue@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/require-extension-hooks-vue/-/require-extension-hooks-vue-1.0.0.tgz#a0837a2af8350837b3964ae821680df14737560e"
   dependencies:
@@ -8162,7 +8162,7 @@ require-extension-hooks-vue@^1.0.0:
     vue-template-compiler "^2.2.0"
     vue-template-es2015-compiler "^1.5.0"
 
-require-extension-hooks@^0.3.2:
+require-extension-hooks@0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/require-extension-hooks/-/require-extension-hooks-0.3.2.tgz#412ef89ab5ef6116321699b9776013268eb04159"
   dependencies:
@@ -8934,7 +8934,7 @@ table@4.0.2:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-tap-nyan@^1.1.0:
+tap-nyan@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/tap-nyan/-/tap-nyan-1.1.0.tgz#2b8d13a1f9ca51c1b3ada0c6ccdb1177d2065bb0"
   dependencies:
@@ -9446,7 +9446,7 @@ vue-hot-reload-api@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"
 
-vue-lazyload@^1.2.3:
+vue-lazyload@1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-1.2.3.tgz#901f9ec15c7e6ca78781a2bae4a343686bdedb2c"
 
