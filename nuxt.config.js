@@ -90,5 +90,8 @@ module.exports = {
     mobileAppIOS: true,
     appleStatusBarStyle: "default"
   },
-  plugins: ["~/plugins/vue-lazyload"]
+  plugins: ["~/plugins/vue-lazyload"],
+  sentry: {
+    dsn: "https://00d0e618cb21449ba08d70198c2544e1@sentry.io/1214387"
+  }
 }
