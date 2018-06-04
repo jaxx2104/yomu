@@ -50,6 +50,6 @@
   "require-extension-hooks-babel": "0.1.1",
   "require-extension-hooks-vue": "1.0.0",
   "tap-nyan": "1.1.0",
-  "vue-lazyload": "1.2.3"
+  "vue-lazyload": "1.2.4"
  }
 }
