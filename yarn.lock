@@ -450,11 +450,11 @@
     react-textarea-autosize "^5.2.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-viewport@3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-3.4.6.tgz#42a3fd095c7ef4f2c35c18ce3e946faf4ab70507"
+"@storybook/addon-viewport@3.4.7":
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-3.4.7.tgz#2c63084cbd09ce52a661454397e7a3a22a8eef7f"
   dependencies:
-    "@storybook/components" "3.4.6"
+    "@storybook/components" "3.4.7"
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
@@ -482,6 +482,14 @@
 "@storybook/components@3.4.6":
   version "3.4.6"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.6.tgz#34bddcfa21bddc59ef57a052d157285fab7ba003"
+  dependencies:
+    glamor "^2.20.40"
+    glamorous "^4.12.1"
+    prop-types "^15.6.1"
+
+"@storybook/components@3.4.7":
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.7.tgz#6f2f1d8dd1341d3794abc31b728089fa8021e973"
   dependencies:
     glamor "^2.20.40"
     glamorous "^4.12.1"
