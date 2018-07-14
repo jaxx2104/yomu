@@ -34,7 +34,7 @@
   "@storybook/addon-knobs": "3.4.7",
   "@storybook/addon-viewport": "3.4.7",
   "@storybook/vue": "3.4.7",
-  "@vue/test-utils": "1.0.0-beta.19",
+  "@vue/test-utils": "1.0.0-beta.20",
   "ava": "1.0.0-beta.6",
   "babel-eslint": "8.2.3",
   "babel-plugin-istanbul": "4.1.6",
