@@ -430,10 +430,11 @@
     "@nuxtjs/meta" "^2.2.1"
     "@nuxtjs/workbox" "^2.2.0"
 
-"@nuxtjs/sentry@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/sentry/-/sentry-1.0.3.tgz#e7de4231fd90815cb7bba9dda297f6edf56c067c"
+"@nuxtjs/sentry@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/sentry/-/sentry-1.1.1.tgz#8050b8e9f90b7907080024ce34ed9927ab269c27"
   dependencies:
+    consola "^1.4.1"
     raven "^2.3.0"
     raven-js "^3.21.0"
 
@@ -2792,6 +2793,15 @@ connect@^3.6.5:
 consola@^1.1.4:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/consola/-/consola-1.3.0.tgz#b5effe41c4ecdce971d79268d72b8f9bde0a8c7a"
+  dependencies:
+    chalk "^2.3.2"
+    figures "^2.0.0"
+    lodash "^4.17.5"
+    std-env "^1.1.0"
+
+consola@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/consola/-/consola-1.4.1.tgz#4b1c6259c8db23f51e7cfb68cd383ec5ee298f0e"
   dependencies:
     chalk "^2.3.2"
     figures "^2.0.0"
