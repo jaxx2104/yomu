@@ -30,7 +30,7 @@
  "devDependencies": {
   "@nuxtjs/axios": "5.3.1",
   "@nuxtjs/pwa": "2.0.8",
-  "@nuxtjs/sentry": "1.0.3",
+  "@nuxtjs/sentry": "1.1.1",
   "@storybook/addon-knobs": "3.4.8",
   "@storybook/addon-viewport": "3.4.8",
   "@storybook/vue": "3.4.8",
