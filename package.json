@@ -44,7 +44,7 @@
   "eslint-friendly-formatter": "4.0.1",
   "eslint-loader": "2.1.0",
   "eslint-plugin-prettier": "2.6.2",
-  "eslint-plugin-vue": "4.6.0",
+  "eslint-plugin-vue": "4.7.1",
   "istanbul": "0.4.5",
   "require-extension-hooks": "0.3.2",
   "require-extension-hooks-babel": "0.1.1",
