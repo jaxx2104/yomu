@@ -33,7 +33,7 @@
   "@nuxtjs/sentry": "1.1.1",
   "@storybook/addon-knobs": "3.4.8",
   "@storybook/addon-viewport": "3.4.8",
-  "@storybook/vue": "3.4.8",
+  "@storybook/vue": "3.4.10",
   "@vue/test-utils": "1.0.0-beta.20",
   "ava": "1.0.0-beta.6",
   "babel-eslint": "8.2.6",
