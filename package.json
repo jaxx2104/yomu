@@ -46,7 +46,7 @@
   "eslint-plugin-prettier": "2.6.2",
   "eslint-plugin-vue": "4.7.1",
   "istanbul": "0.4.5",
-  "require-extension-hooks": "0.3.2",
+  "require-extension-hooks": "0.3.3",
   "require-extension-hooks-babel": "0.1.1",
   "require-extension-hooks-vue": "1.0.1",
   "tap-nyan": "1.1.0",
