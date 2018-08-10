@@ -48,7 +48,7 @@
   "istanbul": "0.4.5",
   "require-extension-hooks": "0.3.2",
   "require-extension-hooks-babel": "0.1.1",
-  "require-extension-hooks-vue": "1.0.1",
+  "require-extension-hooks-vue": "1.1.0",
   "tap-nyan": "1.1.0",
   "vue-lazyload": "1.2.6"
  }
