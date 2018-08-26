@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import CardList from "~/components/CardList"
+import CardList from "~/src/components/CardList"
 import { mapState } from "vuex"
 
 export default {

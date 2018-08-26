@@ -13,9 +13,9 @@
 <script>
 import { mapActions, mapGetters, mapState } from "vuex"
 
-import Loading from "~/components/Loading"
-import Navbar from "~/components/Navbar"
-import SceneList from "~/components/SceneList"
+import Loading from "~/src/components/Loading"
+import Navbar from "~/src/components/Navbar"
+import SceneList from "~/src/components/SceneList"
 
 export default {
   components: {

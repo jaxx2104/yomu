@@ -1,6 +1,6 @@
-import { getFeed, getFeedDummy } from "~/services/feeds"
-import { formatEntries } from "~/services/entries"
-import feeds from "~/assets/feeds.json"
+import { getFeed, getFeedDummy } from "~/src/services/feeds"
+import { formatEntries } from "~/src/services/entries"
+import feeds from "~/src/assets/feeds.json"
 
 export const state = () => ({
   entries: [],
@@ -55,9 +55,14 @@ export const actions = {
     const promiseList = currentFeeds.map(
       ({ url }) => (process.env.DEBUG_MODE ? getFeedDummy() : getFeed(url))
     )
-    let entries = await Promise.all(promiseList)
-    entries = formatEntries(entries)
-    commit("SET_ENTRIES", entries)
+    try {
+      let entries = await Promise.all(promiseList)
+      entries = formatEntries(entries)
+      commit("SET_ENTRIES", entries)
+    } catch (e) {
+      /* eslint-disable-next-line no-console */
+      console.log(e)
+    }
     commit("SET_LOADING", false)
   },
   setEntries({ commit }, entries) {

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import Card from "~/components/Card"
+import Card from "~/src/components/Card"
 
 export default {
   components: {
@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .card-list {
   width: 100%;
   margin: 0 auto;

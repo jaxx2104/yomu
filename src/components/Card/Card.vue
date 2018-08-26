@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .card-tile {
   cursor: pointer;
   width: auto;

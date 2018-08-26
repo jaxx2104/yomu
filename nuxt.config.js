@@ -67,6 +67,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    babel: {
+      plugins: ["root-import"]
+    },
     /*
     ** Run ESLint on save
     */
@@ -93,5 +96,6 @@ module.exports = {
   plugins: ["~/plugins/vue-lazyload"],
   sentry: {
     dsn: "https://00d0e618cb21449ba08d70198c2544e1@sentry.io/1214387"
-  }
+  },
+  srcDir: "src"
 }

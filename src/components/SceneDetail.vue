@@ -22,8 +22,8 @@
           v-html="detail ? detail.content : content"
         />
         <Button
-          :action="onMore"
           label="MORE"
+          @action="onMore"
         />
       </div>
     </transition>
@@ -33,7 +33,7 @@
 
 <script>
 import { mapGetters } from "vuex"
-import Button from "~/components/Button"
+import Button from "~/src/components/Button"
 
 export default {
   components: {
