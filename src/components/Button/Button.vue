@@ -1,7 +1,7 @@
 <template>
   <button
     :class="className"
-    @click="action">
+    @click="$emit('action')">
     {{ label }}
   </button>
 </template>
@@ -9,7 +9,6 @@
 export default {
   components: {},
   props: {
-    action: { type: Function, default: () => {} },
     className: { type: String, default: "" },
     label: { type: String, default: "" }
   },
@@ -21,7 +20,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 button {
   background-color: transparent;
   background-image: none;

@@ -2,7 +2,7 @@
   <div
     :class="className"
     class="icon"
-    @click="action"
+    @click="$emit('action')"
   >
     <img
       :src="'/icons/' + icon + '.svg'"
@@ -13,7 +13,6 @@
 export default {
   components: {},
   props: {
-    action: { type: Function, default: () => {} },
     className: { type: String, default: "" },
     icon: { type: String, default: "" }
   },
@@ -30,6 +29,7 @@ export default {
   background-position: center;
   border-radius: 50%;
   cursor: pointer;
+  display: inline-block;
   padding: 1rem 1.0875rem;
   transition: background 0.8s;
 }

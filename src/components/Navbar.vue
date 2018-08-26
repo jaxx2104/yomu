@@ -1,25 +1,25 @@
 <template>
-  <header>
+  <header class="navbar">
     <Icon
       v-if="menuLeft.icon"
-      :action="menuLeft.action"
       :icon="menuLeft.icon"
       class-name="menu"
+      @action="menuLeft.action"
     />
     <div class="brand">
       <h1>{{ title }}</h1>
     </div>
     <Icon
       v-if="menuRight.icon"
-      :action="menuRight.action"
       :icon="menuRight.icon"
       class-name="menu"
+      @action="menuRight.action"
     />
   </header>
 </template>
 
 <script>
-import Icon from "~/components/Icon"
+import Icon from "~/src/components/Icon"
 
 export default {
   name: "Navbar",
@@ -55,12 +55,13 @@ export default {
 </script>
 
 <style scoped>
-header {
+.navbar {
   align-items: center;
   background-color: #fff;
   border-bottom: solid 0.5px #ccc;
   display: flex;
   flex-direction: row;
+  height: 72px;
   justify-content: space-between;
   position: sticky;
   top: 0;

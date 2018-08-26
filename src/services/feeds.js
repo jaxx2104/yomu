@@ -1,6 +1,6 @@
 import axios from "axios"
 import qs from "querystring"
-import rss from "~/assets/rss.json"
+import rss from "~/src/assets/rss.json"
 
 export const getFeed = url => {
   const baseUrl = "https://query.yahooapis.com/v1/public/yql?"
