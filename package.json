@@ -37,7 +37,7 @@
   "@vue/test-utils": "1.0.0-beta.20",
   "ava": "1.0.0-beta.6",
   "babel-eslint": "8.2.6",
-  "babel-plugin-istanbul": "4.1.6",
+  "babel-plugin-istanbul": "5.0.1",
   "browser-env": "3.2.5",
   "eslint": "5.2.0",
   "eslint-config-prettier": "2.9.0",
