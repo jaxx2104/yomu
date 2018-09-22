@@ -40,7 +40,7 @@
   "babel-plugin-istanbul": "4.1.6",
   "browser-env": "3.2.5",
   "eslint": "5.2.0",
-  "eslint-config-prettier": "2.9.0",
+  "eslint-config-prettier": "3.1.0",
   "eslint-friendly-formatter": "4.0.1",
   "eslint-loader": "2.1.0",
   "eslint-plugin-prettier": "2.6.2",
