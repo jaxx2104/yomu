@@ -28,7 +28,7 @@
   "nuxt": "1.4.1"
  },
  "devDependencies": {
-  "@nuxtjs/axios": "5.3.1",
+  "@nuxtjs/axios": "5.3.3",
   "@nuxtjs/pwa": "2.0.8",
   "@nuxtjs/sentry": "1.1.1",
   "@storybook/addon-knobs": "3.4.8",
