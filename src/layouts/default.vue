@@ -58,7 +58,7 @@ html {
 
 @font-face {
   font-family: spokes;
-  src: url("~/assets/spokes.ttf");
+  src: url("../assets/spokes.ttf");
 }
 
 .article {

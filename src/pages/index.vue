@@ -2,7 +2,7 @@
   <div id="top">
     <Navbar
       :menu-left="{icon: 'search', action: onSearch }"
-      :menu-right="{icon: 'toggle', action: onToggle }"
+      :menu-right="{icon: 'toggle-off', action: onToggle }"
       title="Yomu"
     />
     <SceneList />
@@ -25,19 +25,21 @@ export default {
   },
   computed: {
     ...mapState(["isLoading"]),
-    ...mapGetters(["currentFeeds"])
+    ...mapGetters("feeds", ["currentFeeds"])
   },
   created() {
     this.load()
   },
   mounted() {},
   methods: {
-    ...mapActions(["togglePrimary", "updateEntries"]),
-    load() {
+    ...mapActions("feeds", ["initFeeds", "togglePrimary"]),
+    ...mapActions("entries", ["updateEntries"]),
+    async load() {
+      await this.initFeeds()
       return this.updateEntries(this.currentFeeds)
     },
     onSearch() {
-      alert("In development 📦")
+      this.$router.push("search")
     },
     onToggle() {
       this.togglePrimary()
