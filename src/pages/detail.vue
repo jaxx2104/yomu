@@ -1,8 +1,8 @@
 <template>
   <div id="detail">
     <Navbar
-      :menu-left="{icon: 'cancel', action: onCancel}"
-      :menu-right="{icon: 'share', action: onShare}"
+      :menu-left="{icon: 'times', action: onCancel}"
+      :menu-right="{icon: 'share-square', action: onShare}"
       title=""
     />
     <SceneDetail />
@@ -27,10 +27,10 @@ export default {
     ...mapState(["isLoading"])
   },
   methods: {
-    ...mapActions(["setSelected"]),
+    ...mapActions("entries", ["setSelect"]),
 
     onCancel() {
-      this.setSelected(null)
+      this.setSelect(null)
       this.$router.push("/")
     },
 
