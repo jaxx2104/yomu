@@ -14,3 +14,5 @@ dist
 sw.*
 
 .DS_Store
+.env
+.tmp
