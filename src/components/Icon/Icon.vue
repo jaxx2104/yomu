@@ -4,27 +4,34 @@
     class="icon"
     @click="$emit('action')"
   >
-    <img
-      :src="'/icons/' + icon + '.svg'"
-    >
+    <font-awesome-icon
+      :icon="icon"
+      :style="styles"
+    />
   </div>
 </template>
 <script>
 export default {
   components: {},
   props: {
+    color: { type: String, default: "#e91e63" },
     className: { type: String, default: "" },
     icon: { type: String, default: "" }
   },
   data() {
     return {}
   },
-  computed: {},
+  computed: {
+    styles() {
+      const color = this.color
+      return { color }
+    }
+  },
   methods: {}
 }
 </script>
 
-<style>
+<style scoped>
 .icon {
   background-position: center;
   border-radius: 50%;
@@ -47,8 +54,7 @@ export default {
   transition: background 0s;
 }
 
-.icon > img {
+.icon > svg {
   vertical-align: middle;
-  width: 20px;
 }
 </style>
