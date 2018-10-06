@@ -84,7 +84,13 @@ module.exports = {
       }
     }
   },
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxtjs/sentry"],
+  modules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/localforage",
+    "@nuxtjs/proxy",
+    "@nuxtjs/pwa",
+    "@nuxtjs/sentry"
+  ],
   manifest: {
     name: "yomu",
     lang: "ja"
@@ -93,9 +99,18 @@ module.exports = {
     mobileAppIOS: true,
     appleStatusBarStyle: "default"
   },
-  plugins: ["~/plugins/vue-lazyload"],
+  proxy: {
+    "/api": {
+      target: "http://cloud.feedly.com",
+      pathRewrite: { "^/api": "" }
+    }
+  },
+  plugins: ["~/plugins/vue-fontawesome", "~/plugins/vue-lazyload"],
   sentry: {
-    dsn: "https://00d0e618cb21449ba08d70198c2544e1@sentry.io/1214387"
+    dsn:
+      process.env.NODE_ENV === "production"
+        ? "https://00d0e618cb21449ba08d70198c2544e1@sentry.io/1214387"
+        : ""
   },
   srcDir: "src"
 }
