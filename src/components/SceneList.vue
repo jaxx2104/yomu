@@ -1,5 +1,6 @@
 <template>
   <transition-group
+    v-if="entries.length"
     name="fade"
     class="content"
     tag="div"
@@ -10,7 +11,7 @@
       :key="index"
       :row="index"
       :title="entry.title"
-      :items="entry.entry"
+      :items="entry.items"
     />
   </transition-group>
 </template>
@@ -20,11 +21,12 @@ import CardList from "~/src/components/CardList"
 import { mapState } from "vuex"
 
 export default {
+  name: "SceneList",
   components: {
     CardList
   },
   computed: {
-    ...mapState(["entries"])
+    ...mapState("entries", ["entries"])
   }
 }
 </script>

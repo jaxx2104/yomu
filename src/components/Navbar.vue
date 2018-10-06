@@ -58,7 +58,8 @@ export default {
 .navbar {
   align-items: center;
   background-color: #fff;
-  border-bottom: solid 0.5px #ccc;
+  border-bottom: solid 0.5px #aaa;
+  box-shadow: 0px 8px 4px -4px rgba(150, 150, 150, 0.1);
   display: flex;
   flex-direction: row;
   height: 72px;

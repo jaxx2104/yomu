@@ -49,7 +49,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters("entries", {
       detail: "currentEntry"
     })
   },

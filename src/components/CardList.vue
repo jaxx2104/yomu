@@ -16,12 +16,14 @@
         :column="index"
         :title="item.title"
         :image="item.image"
+        @action="onDetail"
       />
     </transition-group>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex"
 import Card from "~/src/components/Card"
 
 export default {
@@ -36,6 +38,14 @@ export default {
       default: () => {
         return []
       }
+    }
+  },
+  methods: {
+    ...mapActions("entries", ["setSelect"]),
+
+    onDetail({ row, column }) {
+      this.setSelect({ row, column })
+      this.$router.push("detail")
     }
   }
 }

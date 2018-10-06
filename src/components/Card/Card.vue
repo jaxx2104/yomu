@@ -11,8 +11,6 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex"
-
 export default {
   components: {},
   props: {
@@ -36,18 +34,13 @@ export default {
   data() {
     return {}
   },
-  computed: {
-    ...mapState(["entries"])
-  },
+  computed: {},
   methods: {
-    ...mapActions(["setSelected"]),
-
     onClick() {
-      this.setSelected({
+      this.$emit("action", {
         row: this.row,
         column: this.column
       })
-      this.$router.push("detail")
     }
   }
 }

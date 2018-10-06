@@ -32,7 +32,7 @@ button {
   font-weight: 400;
   line-height: 1.5;
   padding: 0.5rem 0.75rem;
-  margin: 1rem 0;
+  margin: 0.375rem;
   text-align: center;
   user-select: none;
   vertical-align: middle;
