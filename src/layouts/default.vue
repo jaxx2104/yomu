@@ -4,7 +4,8 @@
 
 <style>
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -80,6 +81,7 @@ html {
 }
 
 img {
+  height: auto;
   width: 100%;
 }
 </style>

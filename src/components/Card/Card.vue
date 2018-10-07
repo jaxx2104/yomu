@@ -71,8 +71,9 @@ export default {
 
 .card-title {
   color: white;
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
-  font-size: 1.25rem;
+  filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 1));
+  font-size: 1rem;
+  line-height: 1.25rem;
   padding: 8px;
   user-select: none;
 }
@@ -85,7 +86,8 @@ export default {
 
   .card-title {
     padding: 4px;
-    font-size: 1rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
