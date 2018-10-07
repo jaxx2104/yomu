@@ -4,10 +4,7 @@ import * as types from "./types"
 
 export const state = () => ({
   entries: [],
-  select: {
-    row: 0,
-    column: 0
-  }
+  select: null
 })
 
 export const getters = {

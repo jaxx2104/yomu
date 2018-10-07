@@ -56,6 +56,7 @@ export default {
 .card-image {
   width: 200px;
   height: 200px;
+  background-color: #ddd;
   background-size: cover;
   background-position: center;
 }
