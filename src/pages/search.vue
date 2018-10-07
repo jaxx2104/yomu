@@ -4,29 +4,31 @@
       :menu-left="{icon: 'times', action: onClose}"
       title=""
     />
-    <Searchbar
-      @search="onSearch"
-      @cancel="onCancel"
-    />
-    <Draggable
-      v-model="list"
-      :options="{handle:'.sort'}"
-      class="list"
-      @start="drag=true"
-      @end="drag=false">
-      <transition-group name="fade">
-        <ListItem
-          v-for="(item, index) in list"
-          :desc="item.url"
-          :index="index"
-          :is-edit="!isSearch"
-          :key="index"
-          :title="item.title"
-          @select="onAdd"
-          @delete="onRemove"
-        />
-      </transition-group>
-    </Draggable>
+    <div class="scene">
+      <Searchbar
+        @search="onSearch"
+        @cancel="onCancel"
+      />
+      <Draggable
+        v-model="list"
+        :options="{handle:'.sort'}"
+        class="list"
+        @start="drag=true"
+        @end="drag=false">
+        <transition-group name="fade">
+          <ListItem
+            v-for="(item, index) in list"
+            :desc="item.url"
+            :index="index"
+            :is-edit="!isSearch"
+            :key="index"
+            :title="item.title"
+            @select="onAdd"
+            @delete="onRemove"
+          />
+        </transition-group>
+      </Draggable>
+    </div>
     <Loading v-show="isLoading"/>
   </div>
 </template>
@@ -121,4 +123,11 @@ export default {
 </script>
 
 <style scoped>
+.scene {
+  padding-top: 72px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  overflow: scroll;
+}
 </style>

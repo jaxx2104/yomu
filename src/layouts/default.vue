@@ -25,7 +25,7 @@ html {
 .fade-enter-active,
 .fade-leave-active {
   opacity: 1;
-  transition: 0.5s ease-out;
+  transition: 0.2s ease-out;
 }
 .fade-enter,
 .fade-leave-to {
@@ -40,7 +40,7 @@ html {
   top: 0;
   opacity: 1;
   position: relative;
-  transition: 0.5s ease-out;
+  transition: 0.2s ease-out;
 }
 .slide-enter,
 .slide-leave-to {
@@ -65,14 +65,15 @@ html {
 .article {
   color: #495057;
 }
+
 .article > p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5;
-  margin: 12px 0;
+  margin: 20px 0;
 }
 
 .article a {
-  color: #e91e63;
+  color: #999;
 }
 
 .article h2 {
@@ -82,6 +83,6 @@ html {
 
 img {
   height: auto;
-  width: 100%;
+  max-width: 100%;
 }
 </style>

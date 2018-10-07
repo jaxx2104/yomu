@@ -5,7 +5,7 @@ import rss from "~/src/assets/rss.json"
 export const get = url => {
   const baseUrl = "api/v3/streams/contents"
   const options = qs.stringify({
-    count: 10,
+    count: 100,
     streamId: "feed"
   })
   const query = encodeURIComponent(url)
