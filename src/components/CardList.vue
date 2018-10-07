@@ -59,9 +59,8 @@ export default {
 }
 .card-info {
   color: #999;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 900;
-  font-size: 0.75rem;
+  font-weight: 100;
+  font-size: 0.5rem;
   white-space: nowrap;
   overflow: hidden;
   padding: 4px 8px;
