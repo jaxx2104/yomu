@@ -32,7 +32,14 @@ const formatItems = items => {
     const pattern = /<img.*?src=("|')(.*?)("|').*?>/
     if (result.content && result.content.match(pattern)) {
       result.image = result.content.match(pattern)[2]
-      result.content.replace(pattern, "")
+    }
+
+    if (result.content) {
+      result.content = result.content.replace(/<(b|strong).*?>/g, "<p>")
+      result.content = result.content.replace(/<\/(b|strong).*?>/g, "</p>")
+      result.content = result.content.replace(/<(div|span).*?>/g, "")
+      result.content = result.content.replace(/<\/(div|span).*?>/g, "")
+      result.content = result.content.replace(/<p>\s<\/p>/g, "")
     }
     return result
   })

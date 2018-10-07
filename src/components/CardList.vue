@@ -45,7 +45,6 @@ export default {
 
     onDetail({ row, column }) {
       this.setSelect({ row, column })
-      this.$router.push("detail")
     }
   }
 }
