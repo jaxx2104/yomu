@@ -1,34 +1,37 @@
 <template>
-  <div class="scene-detail">
-    <transition
-      name="fade"
-      appear>
+  <transition
+    name="fade"
+    appear
+  >
+    <div
+      class="scene-detail"
+    >
       <img
-        :src="detail ? detail.image : image"
+        v-lazy="thumb"
         class="detail-image"
       >
-    </transition>
-    <transition
-      name="slide"
-      appear
-    >
-      <div class="detail-wrap">
-        <div class="detail-info">
-          <h1 class="detail-title">{{ detail ? detail.title : title }}</h1>
-          <time class="detail-date">{{ detail ? detail.date : date }}</time>
+      <transition
+        name="slide"
+        tag="div"
+        appear
+      >
+        <div class="detail-wrap">
+          <div class="detail-info">
+            <h1 class="detail-title">{{ detail ? detail.title : title }}</h1>
+            <time class="detail-date">{{ detail ? detail.date : date }}</time>
+          </div>
+          <div
+            class="detail-content article"
+            v-html="detail ? detail.content : content"
+          />
+          <Button
+            label="MORE"
+            @action="onMore"
+          />
         </div>
-        <div
-          class="detail-content article"
-          v-html="detail ? detail.content : content"
-        />
-        <Button
-          label="MORE"
-          @action="onMore"
-        />
-      </div>
-    </transition>
-  </div>
-
+      </transition>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -51,26 +54,39 @@ export default {
   computed: {
     ...mapGetters("entries", {
       detail: "currentEntry"
-    })
+    }),
+    thumb() {
+      return this.detail ? this.detail.image : this.image
+    }
   },
   methods: {
     onMore() {
       window.open(this.detail ? this.detail.link : this.link)
+    },
+    onPress() {
+      /* eslint-disable-next-line no-console */
+      console.log("onTap")
     }
   }
 }
 </script>
 
 <style scoped>
+.scene-detail {
+  position: absolute;
+}
 .detail-image {
-  width: 100%;
+  position: fixed;
+  background-color: #fff;
   vertical-align: bottom;
+  width: 100%;
 }
 
 .detail-wrap {
   filter: drop-shadow(-15px 0px 40px rgba(0, 0, 0, 0.6));
   background-color: #fff;
-  padding: 20px;
+  padding: 16px;
+  margin-top: 300px;
 }
 
 .detail-info {
@@ -92,5 +108,6 @@ export default {
 .detail-content {
   font-weight: 300;
   padding: 12px 0;
+  word-break: break-all;
 }
 </style>

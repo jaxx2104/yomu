@@ -2,7 +2,7 @@
   <transition-group
     v-if="entries.length"
     name="fade"
-    class="content"
+    class="scene-list"
     tag="div"
     appear
   >
@@ -32,10 +32,7 @@ export default {
 </script>
 
 <style>
-.content {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0 auto;
+.scene-list {
+  height: 100%;
 }
 </style>

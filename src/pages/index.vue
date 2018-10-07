@@ -1,11 +1,17 @@
 <template>
   <div id="top">
     <Navbar
-      :menu-left="{icon: 'search', action: onSearch }"
-      :menu-right="{icon: 'toggle-off', action: onToggle }"
-      title="Yomu"
+      :menu-left="menuLeft"
+      :menu-right="menuRight"
+      :title="menuTitle"
     />
-    <SceneList />
+    <div class="scene">
+      <SceneList />
+      <SceneDetail
+        v-if="select"
+        @close="onCancel"
+      />
+    </div>
     <Loading v-show="isLoading"/>
   </div>
 </template>
@@ -16,16 +22,32 @@ import { mapActions, mapGetters, mapState } from "vuex"
 import Loading from "~/src/components/Loading"
 import Navbar from "~/src/components/Navbar"
 import SceneList from "~/src/components/SceneList"
+import SceneDetail from "~/src/components/SceneDetail"
 
 export default {
   components: {
     Loading,
     Navbar,
+    SceneDetail,
     SceneList
   },
   computed: {
     ...mapState(["isLoading"]),
-    ...mapGetters("feeds", ["currentFeeds"])
+    ...mapState("entries", ["select"]),
+    ...mapGetters("feeds", ["currentFeeds"]),
+    menuTitle() {
+      return this.select ? "" : "Yomu"
+    },
+    menuLeft() {
+      return this.select
+        ? { icon: "times", action: this.onCancel }
+        : { icon: "search", action: this.onSearch }
+    },
+    menuRight() {
+      return this.select
+        ? { icon: "share-square", action: this.onShare }
+        : { icon: "toggle-off", action: this.onToggle }
+    }
   },
   created() {
     this.load()
@@ -33,10 +55,17 @@ export default {
   mounted() {},
   methods: {
     ...mapActions("feeds", ["initFeeds", "togglePrimary"]),
-    ...mapActions("entries", ["updateEntries"]),
+    ...mapActions("entries", ["updateEntries", "setSelect"]),
+
     async load() {
       await this.initFeeds()
       return this.updateEntries(this.currentFeeds)
+    },
+    onCancel() {
+      this.setSelect(null)
+    },
+    onShare() {
+      alert("In development 📦")
     },
     onSearch() {
       this.$router.push("search")
@@ -49,5 +78,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.scene {
+  padding-top: 72px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  overflow: scroll;
+}
 </style>
