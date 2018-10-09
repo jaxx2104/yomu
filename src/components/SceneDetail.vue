@@ -8,7 +8,12 @@
     >
       <img
         v-lazy="thumb"
+        :class="{'close': isClose}"
         class="detail-image"
+      >
+      <img
+        v-lazy="thumb"
+        class="dummy-image"
       >
       <transition
         name="slide"
@@ -44,6 +49,7 @@ export default {
   },
   data() {
     return {
+      isClose: false,
       image: "load.jpg",
       title: "これはサンプルテキストです",
       link: "http://localhost:3000/",
@@ -58,6 +64,21 @@ export default {
     thumb() {
       return this.detail ? this.detail.image : this.image
     }
+  },
+  mounted() {
+    const scrollY = 40
+    // とじる場合の挙動
+    window.addEventListener("scroll", () => {
+      this.isClose = scrollY > window.scrollY
+      if (window.scrollY === 0) {
+        this.$emit("close")
+      }
+    })
+    // 初期のスクロール位置
+    window.scroll({
+      top: scrollY,
+      behavior: "smooth"
+    })
   },
   methods: {
     onMore() {
@@ -75,6 +96,7 @@ export default {
 .scene-detail {
   position: absolute;
 }
+
 .detail-image {
   position: fixed;
   background-color: #fff;
@@ -82,11 +104,20 @@ export default {
   width: 100%;
 }
 
+.close {
+  opacity: 0.75;
+}
+
+.dummy-image {
+  margin: -2px 0;
+  opacity: 0;
+  background-color: #fff;
+}
+
 .detail-wrap {
   filter: drop-shadow(-15px 0px 40px rgba(0, 0, 0, 0.6));
   background-color: #fff;
   padding: 16px;
-  margin-top: 300px;
 }
 
 .detail-info {
