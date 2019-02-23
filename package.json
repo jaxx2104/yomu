@@ -34,7 +34,7 @@
   "babel-jest": "^23.4.2",
   "babel-plugin-root-import": "^6.1.0",
   "babel-plugin-transform-object-rest-spread": "^6.26.0",
-  "browser-env": "3.2.5",
+  "browser-env": "3.2.6",
   "dotenv": "^6.0.0",
   "eslint": "5.6.1",
   "eslint-config-prettier": "3.1.0",
