@@ -36,7 +36,7 @@
   "babel-plugin-transform-object-rest-spread": "^6.26.0",
   "browser-env": "3.2.5",
   "dotenv": "^6.0.0",
-  "eslint": "5.6.1",
+  "eslint": "5.16.0",
   "eslint-config-prettier": "3.1.0",
   "eslint-friendly-formatter": "4.0.1",
   "eslint-loader": "2.1.1",
