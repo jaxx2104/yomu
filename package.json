@@ -15,7 +15,7 @@
   "test": "jest"
  },
  "dependencies": {
-  "nuxt": "2.1.0"
+  "nuxt": "2.6.3"
  },
  "devDependencies": {
   "@fortawesome/fontawesome-svg-core": "^1.2.2",
