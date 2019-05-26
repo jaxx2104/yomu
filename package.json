@@ -19,9 +19,7 @@
     "query-string": "^6.5.0",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
-    "vue-class-component": "^7.0.2",
     "vue-lazyload": "1.2.6",
-    "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
     "vuedraggable": "^2.20.0",
     "vuex": "^3.0.1"
@@ -45,6 +43,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "husky": "^2.3.0",
     "lint-staged": "^8.1.5",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
