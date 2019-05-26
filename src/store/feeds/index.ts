@@ -1,20 +1,24 @@
-import * as types from "./types"
-import defaultFeeds from "~/src/assets/feeds.json"
-import storage from "~/src/services/storage"
+import { GetterTree, MutationTree, ActionTree, Module } from "vuex"
 
-export const state = () => ({
+import { RootState } from "../types"
+import { State } from "./types"
+import * as types from "../mutation-types"
+import defaultFeeds from "@/assets/feeds.json"
+import storage from "@/helpers/storage"
+
+const state: State = {
   isPrimary: true,
   feeds: []
-})
+}
 
-export const getters = {
+const getters: GetterTree<State, RootState> = {
   currentFeeds: ({ feeds, isPrimary }) => {
     if (!feeds) return
-    return feeds[isPrimary ? 0 : 1]
+    return feeds[+isPrimary]
   }
 }
 
-export const mutations = {
+const mutations: MutationTree<State> = {
   [types.SET_PRIMARY](state) {
     state.isPrimary = !state.isPrimary
   },
@@ -23,7 +27,7 @@ export const mutations = {
   }
 }
 
-export const actions = {
+const actions: ActionTree<State, RootState> = {
   async initFeeds({ commit }) {
     const feeds = (await storage.getItem("feeds")) || defaultFeeds
     commit(types.SET_FEEDS, { feeds })
@@ -36,4 +40,12 @@ export const actions = {
   togglePrimary({ commit }) {
     commit(types.SET_PRIMARY)
   }
+}
+
+export const feeds: Module<State, RootState> = {
+  namespaced: true,
+  state,
+  mutations,
+  actions,
+  getters
 }
