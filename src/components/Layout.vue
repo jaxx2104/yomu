@@ -27,7 +27,15 @@ export default {
   computed: {
     ...commonComputed,
     menuTitle() {
-      return this.select ? "" : "Yomu"
+      const name = this.$router.currentRoute.name
+      let props = "Yomu"
+      if (name === "search") {
+        props = ""
+      }
+      if (name === "home") {
+        props = this.select ? "" : "Yomu"
+      }
+      return props
     },
     menuLeft() {
       const name = this.$router.currentRoute.name
@@ -69,6 +77,16 @@ export default {
     },
     onSearch() {
       this.$router.push("search")
+    },
+    onShare() {
+      if (!navigator.share) {
+        alert("Not support share api 📦")
+        return
+      }
+      navigator.share({
+        url: this.detail.link,
+        title: this.detail.title
+      })
     },
     onToggle() {
       this.togglePrimary()

@@ -1,8 +1,9 @@
 import { mapState, mapGetters, mapActions } from "vuex"
 
 export const commonComputed = {
-  ...mapState(["isLoading"]),
-  ...mapGetters("feeds", ["currentFeeds"])
+  ...mapGetters("feeds", ["currentFeeds"]),
+  ...mapState("entries", ["select"]),
+  ...mapState(["isLoading"])
 }
 
 export const commonActions = {

@@ -30,16 +30,6 @@ export default {
     async load() {
       await this.initFeeds()
       return this.updateEntries(this.currentFeeds)
-    },
-    onShare() {
-      if (!navigator.share) {
-        alert("Not support share api 📦")
-        return
-      }
-      navigator.share({
-        url: this.detail.link,
-        title: this.detail.title
-      })
     }
   }
 }
