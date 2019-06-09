@@ -1,10 +1,8 @@
 <template>
-  <div class="scene-detail">
-    <transition name="fade" appear>
-      <img v-lazy="thumb" :style="styles" class="detail-image" />
-    </transition>
-    <img v-lazy="thumb" class="dummy-image" />
-    <transition name="slide" tag="div" appear>
+  <transition name="slide" tag="div">
+    <div class="scene-detail" v-show="isShow">
+      <img :src="thumb" :style="styles" class="detail-image" />
+      <img :src="thumb" class="dummy-image" />
       <div class="detail-wrap">
         <div class="detail-info">
           <h1 class="detail-title">
@@ -18,12 +16,12 @@
         />
         <Button label="MORE" @action="onMore" />
       </div>
-    </transition>
-  </div>
+    </div>
+  </transition>
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex"
+import { mapState, mapActions, mapGetters } from "vuex"
 import Button from "@/components/Button"
 
 export default {
@@ -35,16 +33,22 @@ export default {
       opacity: 1.0,
       scrollY: 40,
       image: "load.jpg",
-      title: "これはサンプルテキストです",
-      link: "http://localhost:3000/",
-      date: "2018-05-02T15:08:21Z",
-      content: "<p>hogehoge</p><h2>subtitle</h2><p>hogehoge</p><p>hogehoge</p>"
+      title: "",
+      link: "",
+      date: "",
+      content: ""
     }
   },
   computed: {
+    ...mapState("entries", ["select"]),
     ...mapGetters("entries", {
       detail: "currentEntry"
     }),
+    isShow() {
+      this.initScroll()
+      this.setScroll()
+      return this.select
+    },
     thumb() {
       return this.detail ? this.detail.image : this.image
     },
@@ -52,10 +56,6 @@ export default {
       const opacity = this.opacity
       return { opacity }
     }
-  },
-  mounted() {
-    this.initScroll()
-    this.setScroll()
   },
   methods: {
     ...mapActions("entries", ["setSelect"]),
@@ -73,7 +73,7 @@ export default {
     // とじる場合の挙動
     setScroll() {
       const span = 100 / this.scrollY
-      window.addEventListener("scroll", () => {
+      const listener = () => {
         const opacity = (window.scrollY * span) / 100
         if (opacity <= 1) {
           this.opacity = opacity
@@ -81,7 +81,9 @@ export default {
         if (window.scrollY <= 0) {
           this.setSelect(null)
         }
-      })
+      }
+      window.removeEventListener("scroll", listener)
+      window.addEventListener("scroll", listener)
     },
     onMore() {
       window.open(this.detail ? this.detail.link : this.link)
@@ -93,6 +95,7 @@ export default {
 <style scoped>
 .scene-detail {
   position: absolute;
+  top: 72px;
   width: 100%;
 }
 

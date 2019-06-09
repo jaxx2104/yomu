@@ -1,8 +1,19 @@
 <template>
   <div id="app">
-    <router-view />
+    <Layout>
+      <router-view />
+    </Layout>
   </div>
 </template>
+<script>
+import Layout from "@/components/Layout.vue"
+
+export default {
+  components: {
+    Layout
+  }
+}
+</script>
 
 <style>
 html {
@@ -31,27 +42,32 @@ html {
 .fade-enter-active,
 .fade-leave-active {
   opacity: 1;
-  transition: 0.6s ease-out;
+  transition: 0.3s ease-out;
 }
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
 }
 .fade-move {
-  transition: transform 1s;
+  transition: transform 0.3s;
 }
 
-.slide-enter-active,
-.slide-leave-active {
+.slide-enter-active {
   top: 0;
   opacity: 1;
   position: relative;
-  transition: 0.3s ease-out;
+  transition: 0.6s ease-out;
+}
+.slide-leave-active {
+  top: 0;
+  opacity: 0.2;
+  position: relative;
+  transition: 0s ease-out;
 }
 .slide-enter,
 .slide-leave-to {
   opacity: 0;
-  top: 40px;
+  top: 0px;
 }
 
 @keyframes fadeIn {
@@ -100,5 +116,9 @@ img {
   border: 1px solid #aaa;
   border-radius: 3px;
   margin-bottom: 36px;
+}
+
+[v-cloak] {
+  display: none;
 }
 </style>

@@ -22,13 +22,23 @@ export default {
     Navbar
   },
   data() {
-    return {}
+    return {
+      name: "home"
+    }
+  },
+  watch: {
+    $route: {
+      handler(route) {
+        this.name = route.name
+      },
+      immediate: true
+    }
   },
   computed: {
     ...commonComputed,
     menuTitle() {
-      const name = this.$router.currentRoute.name
-      let props = "Yomu"
+      const name = this.name
+      let props = ""
       if (name === "search") {
         props = ""
       }
@@ -38,7 +48,7 @@ export default {
       return props
     },
     menuLeft() {
-      const name = this.$router.currentRoute.name
+      const name = this.name
       let props = {}
       if (name === "search") {
         props = { icon: "times", action: this.onClose }
@@ -51,7 +61,7 @@ export default {
       return props
     },
     menuRight() {
-      const name = this.$router.currentRoute.name
+      const name = this.name
       let props = {}
       if (name === "search") {
         props = {}

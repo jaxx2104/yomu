@@ -1,20 +1,17 @@
 <template>
-  <!-- <Navbar :menu-left="menuLeft" :menu-right="menuRight" :title="menuTitle" /> -->
-  <Layout>
+  <div id="home">
     <SceneList />
-    <SceneDetail v-if="select" />
-  </Layout>
+    <SceneDetail />
+  </div>
 </template>
 
 <script>
 import { homeComputed, homeActions } from "@/store/helpers.ts"
 import SceneList from "@/components/SceneList.vue"
 import SceneDetail from "@/components/SceneDetail.vue"
-import Layout from "@/components/Layout.vue"
 
 export default {
   components: {
-    Layout,
     SceneDetail,
     SceneList
   },
@@ -35,12 +32,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.scene {
-  padding-top: 72px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  overflow: scroll;
-}
-</style>
+<style scoped></style>

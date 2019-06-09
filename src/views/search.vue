@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <div id="search">
     <Searchbar @search="onSearch" @cancel="onCancel" />
     <Draggable
       v-model="list"
@@ -21,7 +21,7 @@
         />
       </transition-group>
     </Draggable>
-  </Layout>
+  </div>
 </template>
 
 <script>
@@ -30,13 +30,11 @@ import Draggable from "vuedraggable"
 import { searchComputed, searchActions } from "@/store/helpers.ts"
 import ListItem from "@/components/ListItem.vue"
 import Searchbar from "@/components/Searchbar.vue"
-import Layout from "@/components/Layout.vue"
 
 export default {
   components: {
     Draggable,
     ListItem,
-    Layout,
     Searchbar
   },
   data() {

@@ -13,7 +13,6 @@ export const commonActions = {
 
 export const homeComputed = {
   ...mapState(["isLoading"]),
-  ...mapState("entries", ["select"]),
   ...mapGetters("feeds", ["currentFeeds"]),
   ...mapGetters("entries", {
     detail: "currentEntry"
