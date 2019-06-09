@@ -1,5 +1,7 @@
 <template>
-  <nuxt/>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <style>
@@ -22,10 +24,14 @@ html {
   margin: 0;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   opacity: 1;
-  transition: 0.2s ease-out;
+  transition: 0.6s ease-out;
 }
 .fade-enter,
 .fade-leave-to {
@@ -40,7 +46,7 @@ html {
   top: 0;
   opacity: 1;
   position: relative;
-  transition: 0.2s ease-out;
+  transition: 0.3s ease-out;
 }
 .slide-enter,
 .slide-leave-to {
@@ -59,7 +65,7 @@ html {
 
 @font-face {
   font-family: spokes;
-  src: url("../assets/spokes.ttf");
+  src: url("./assets/spokes.ttf");
 }
 
 .article {
@@ -82,7 +88,17 @@ html {
 }
 
 img {
+  display: block;
+  margin: 0 auto;
+  float: center;
   height: auto;
   max-width: 100%;
+}
+
+.detail-content img {
+  max-width: 85%;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  margin-bottom: 36px;
 }
 </style>

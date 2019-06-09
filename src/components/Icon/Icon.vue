@@ -1,13 +1,6 @@
 <template>
-  <div
-    :class="className"
-    class="icon"
-    @click="$emit('action')"
-  >
-    <font-awesome-icon
-      :icon="icon"
-      :style="styles"
-    />
+  <div :class="className" class="icon" @click="$emit('action')">
+    <font-awesome-icon :icon="icon" :style="styles" />
   </div>
 </template>
 <script>

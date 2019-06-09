@@ -1,38 +1,46 @@
 [
   [
-   {
-   "title": "Better Living Through Design",
-   "url": "http://www.betterlivingthroughdesign.com/feed/"
-   }, {
-   "title": "BOOOOOOOM!",
-   "url": "http://www.booooooom.com/feed/"
-   }, {
-   "title": "Cool Hunting",
-   "url": "http://feeds.coolhunting.com/ch"
-   }, {
-   "title": "The Verge",
-   "url": "http://theverge.com/rss/full.xml"
-   }, {
-   "title": "CreativeApplications.Net",
-   "url": "http://www.creativeapplications.net/feed/"
-   }
-   ],
+    {
+      "title": "Better Living Through Design",
+      "url": "http://www.betterlivingthroughdesign.com/feed/"
+    },
+    {
+      "title": "BOOOOOOOM!",
+      "url": "http://www.booooooom.com/feed/"
+    },
+    {
+      "title": "Cool Hunting",
+      "url": "http://feeds.coolhunting.com/ch"
+    },
+    {
+      "title": "The Verge",
+      "url": "http://theverge.com/rss/full.xml"
+    },
+    {
+      "title": "CreativeApplications.Net",
+      "url": "http://www.creativeapplications.net/feed/"
+    }
+  ],
   [
-   {
-   "title": "Dezeen",
-   "url": "http://feeds.feedburner.com/dezeen"
-   }, {
-   "title": "ArchDaily",
-   "url": "http://feeds.feedburner.com/ArchDaily"
-   }, {
-   "title": "CONTEMPORIST",
-   "url": "http://feeds.feedburner.com/contemporist"
-   }, {
-   "title": "conceptMODEL",
-   "url": "http://conceptmodel.tumblr.com/rss"
-   }, {
-   "title": "eVolo | Architecture Magazine",
-   "url": "http://www.evolo.us/feed/"
-   }
-   ]
+    {
+      "title": "Dezeen",
+      "url": "http://feeds.feedburner.com/dezeen"
+    },
+    {
+      "title": "ArchDaily",
+      "url": "http://feeds.feedburner.com/ArchDaily"
+    },
+    {
+      "title": "CONTEMPORIST",
+      "url": "http://feeds.feedburner.com/contemporist"
+    },
+    {
+      "title": "conceptMODEL",
+      "url": "http://conceptmodel.tumblr.com/rss"
+    },
+    {
+      "title": "eVolo | Architecture Magazine",
+      "url": "http://www.evolo.us/feed/"
+    }
   ]
+]

@@ -7,7 +7,7 @@ const wrapper = shallowMount(Button, {
 })
 
 test("Button", () => {
-  expect(wrapper.vm.label).toBe(label)
+  expect(wrapper).toBe(label)
 })
 
 test("Button Spapshot", () => {

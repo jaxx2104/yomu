@@ -5,18 +5,14 @@
       type="text"
       class="search-input"
       placeholder="🔍 search rss"
-    >
-    <Button
-      :label="buttonLabel"
-      style="width:100px"
-      @action="onClick"
     />
+    <Button :label="buttonLabel" style="width:100px" @action="onClick" />
   </section>
 </template>
 
 <script>
 import { mapGetters } from "vuex"
-import Button from "~/src/components/Button"
+import Button from "@/components/Button"
 
 export default {
   name: "Searchbar",
