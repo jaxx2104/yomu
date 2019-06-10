@@ -74,7 +74,6 @@ export default {
       return props
     }
   },
-  created() {},
   methods: {
     ...commonActions,
 

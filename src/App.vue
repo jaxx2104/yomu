@@ -90,11 +90,11 @@ html {
 .article > p {
   font-size: 1rem;
   line-height: 1.5;
-  margin: 20px 0;
+  margin: 12px 0;
 }
 
 .article a {
-  color: #999;
+  color: #e91e63;
 }
 
 .article h2 {
@@ -111,10 +111,11 @@ img {
 }
 
 .detail-content img {
+  display: block;
   max-width: 85%;
   border: 1px solid #aaa;
   border-radius: 3px;
-  margin-bottom: 36px;
+  margin: 0 auto;
 }
 
 [v-cloak] {

@@ -5,16 +5,10 @@
 </template>
 <script>
 export default {
-  components: {},
   props: {
     className: { type: String, default: "" },
     label: { type: String, default: "" }
-  },
-  data() {
-    return {}
-  },
-  computed: {},
-  methods: {}
+  }
 }
 </script>
 

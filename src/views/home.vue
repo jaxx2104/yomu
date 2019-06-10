@@ -21,7 +21,12 @@ export default {
   created() {
     this.load()
   },
-  mounted() {},
+  mounted() {
+    window.scroll({
+      top: 0,
+      behavior: "smooth"
+    })
+  },
   methods: {
     ...homeActions,
     async load() {

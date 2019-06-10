@@ -28,10 +28,6 @@ export default {
       default: "load.jpg"
     }
   },
-  data() {
-    return {}
-  },
-  computed: {},
   methods: {
     onClick() {
       this.$emit("action", {

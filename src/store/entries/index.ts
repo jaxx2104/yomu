@@ -1,4 +1,5 @@
 import { GetterTree, MutationTree, ActionTree, Module } from "vuex"
+import sanitize from "sanitize-html"
 
 import { entries as formatEntries } from "@/helpers/format"
 import { fetch } from "@/helpers/feeds"
@@ -20,6 +21,19 @@ const getters: GetterTree<State, RootState> = {
     if (!select) return null
     const { row, column } = select
     return entries[row].items[column]
+  },
+  currentThumb: (_, { currentEntry }) => {
+    return currentEntry ? currentEntry.image : ""
+  },
+  currentContent: (_, { currentEntry }) => {
+    const content = currentEntry ? currentEntry.content : ""
+    const options = {
+      allowedTags: ["p", "a", "img"],
+      allowedAttributes: { a: ["href"], img: ["src"] },
+      allowedIframeHostnames: ["www.youtube.com"]
+    }
+    const clean = sanitize(content, options)
+    return clean
   }
 }
 
@@ -48,6 +62,7 @@ const actions: ActionTree<State, RootState> = {
     } catch (e) {
       /* eslint-disable-next-line no-console */
       console.log(e)
+      commit(types.SET_LOADING, false, { root: true })
     }
     commit(types.SET_LOADING, false, { root: true })
   }

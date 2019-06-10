@@ -5,22 +5,17 @@
 </template>
 <script>
 export default {
-  components: {},
   props: {
     color: { type: String, default: "#e91e63" },
     className: { type: String, default: "" },
     icon: { type: String, default: "" }
-  },
-  data() {
-    return {}
   },
   computed: {
     styles() {
       const color = this.color
       return { color }
     }
-  },
-  methods: {}
+  }
 }
 </script>
 
@@ -30,8 +25,10 @@ export default {
   border-radius: 50%;
   cursor: pointer;
   display: inline-block;
-  padding: 1rem 1.0875rem;
+  padding: 1rem;
   transition: background 0.8s;
+  width: 50px;
+  height: 50px;
 }
 
 .icon:hover {
@@ -48,6 +45,11 @@ export default {
 }
 
 .icon > svg {
-  vertical-align: middle;
+  display: inline-block;
+  font-size: inherit;
+  height: 16px;
+  width: 16px;
+  overflow: visible;
+  vertical-align: -0.125em;
 }
 </style>

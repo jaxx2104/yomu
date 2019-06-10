@@ -2,18 +2,15 @@
   <transition name="slide" tag="div">
     <div class="scene-detail" v-show="isShow">
       <img :src="thumb" :style="styles" class="detail-image" />
-      <img :src="thumb" class="dummy-image" />
+      <img :src="thumb" :style="dummyStyles" class="dummy-image" />
       <div class="detail-wrap">
         <div class="detail-info">
           <h1 class="detail-title">
-            {{ detail ? detail.title : title }}
+            {{ detail ? detail.title : "" }}
           </h1>
-          <time class="detail-date">{{ detail ? detail.date : date }}</time>
+          <time class="detail-date">{{ detail ? detail.date : "" }}</time>
         </div>
-        <div
-          class="detail-content article"
-          v-html="detail ? detail.content : content"
-        />
+        <div class="detail-content article" v-html="content" />
         <Button label="MORE" @action="onMore" />
       </div>
     </div>
@@ -22,6 +19,7 @@
 
 <script>
 import { mapState, mapActions, mapGetters } from "vuex"
+
 import Button from "@/components/Button"
 
 export default {
@@ -31,50 +29,47 @@ export default {
   data() {
     return {
       opacity: 1.0,
-      scrollY: 40,
-      image: "load.jpg",
-      title: "",
-      link: "",
-      date: "",
-      content: ""
+      scrollY: 30
     }
   },
   computed: {
     ...mapState("entries", ["select"]),
     ...mapGetters("entries", {
-      detail: "currentEntry"
+      detail: "currentEntry",
+      content: "currentContent",
+      thumb: "currentThumb"
     }),
     isShow() {
-      this.initScroll()
-      this.setScroll()
-      this.setScroll2()
-
+      if (this.select) {
+        this.initScroll(this.scrollY)
+        this.setScroll(this.scrollY)
+        this.setScroll2()
+      } else {
+        this.initScroll(0)
+      }
       return this.select
-    },
-    thumb() {
-      return this.detail ? this.detail.image : this.image
     },
     styles() {
       const opacity = this.opacity
       return { opacity }
+    },
+    dummyStyles() {
+      return { "min-height": this.thumb ? "" : "500px" }
     }
   },
   methods: {
     ...mapActions("entries", ["setSelect"]),
 
     // 初期のスクロール位置
-    initScroll() {
+    initScroll(top) {
       setTimeout(() => {
-        window.scroll({
-          top: this.scrollY,
-          behavior: "smooth"
-        })
+        window.scroll({ top, behavior: "smooth" })
       }, 300)
     },
 
     // とじる場合の挙動
-    setScroll() {
-      const span = 100 / this.scrollY
+    setScroll(top) {
+      const span = 100 / top
       const listener = () => {
         const opacity = (window.scrollY * span) / 100
         if (opacity <= 1) {
@@ -95,7 +90,7 @@ export default {
       window.addEventListener("scroll", listener2)
     },
     onMore() {
-      window.open(this.detail ? this.detail.link : this.link)
+      window.open(this.detail ? this.detail.link : "")
     }
   }
 }
@@ -114,10 +109,6 @@ export default {
   background-color: #fff;
   vertical-align: bottom;
   width: 100%;
-}
-
-.close {
-  opacity: 0.75;
 }
 
 .dummy-image {
@@ -151,6 +142,7 @@ export default {
 .detail-content {
   font-weight: 300;
   padding: 12px 0;
-  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 </style>

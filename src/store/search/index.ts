@@ -35,6 +35,7 @@ const actions: ActionTree<State, RootState> = {
     } catch (e) {
       /* eslint-disable-next-line no-console */
       console.log(e)
+      commit(types.SET_LOADING, false, { root: true })
     }
     commit(types.SET_LOADING, false, { root: true })
   }
