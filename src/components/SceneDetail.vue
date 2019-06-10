@@ -1,8 +1,8 @@
 <template>
   <transition name="slide" tag="div">
     <div class="scene-detail" v-show="isShow">
-      <img :src="thumb" :style="styles" class="detail-image" />
-      <img :src="thumb" :style="dummyStyles" class="dummy-image" />
+      <img :src="thumb || image" :style="styles" class="detail-image" />
+      <img :src="thumb || image" :style="dummyStyles" class="dummy-image" />
       <div class="detail-wrap">
         <div class="detail-info">
           <h1 class="detail-title">
@@ -28,6 +28,7 @@ export default {
   },
   data() {
     return {
+      image: "/img/load.jpg",
       opacity: 1.0,
       scrollY: 30
     }
