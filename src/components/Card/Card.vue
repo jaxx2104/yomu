@@ -25,7 +25,7 @@ export default {
     },
     image: {
       type: String,
-      default: "load.jpg"
+      default: "/img/load.jpg"
     }
   },
   methods: {
