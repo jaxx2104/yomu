@@ -1,12 +1,9 @@
 <template>
-  <div
-    class="card-tile"
-    @click="onClick">
-    <div
-      v-lazy:background-image="image"
-      :key="image"
-      class="card-image">
-      <h2 class="card-title">{{ title }}</h2>
+  <div class="card-tile" @click="onClick">
+    <div :key="image" v-lazy:background-image="image" class="card-image">
+      <h2 class="card-title">
+        {{ title }}
+      </h2>
     </div>
   </div>
 </template>
@@ -31,10 +28,6 @@ export default {
       default: "load.jpg"
     }
   },
-  data() {
-    return {}
-  },
-  computed: {},
   methods: {
     onClick() {
       this.$emit("action", {
@@ -59,14 +52,15 @@ export default {
   background-color: #ddd;
   background-size: cover;
   background-position: center;
+  transition: all 0.3s;
 }
 
 .card-image:hover {
-  transition: all 0.5s;
+  transition: all 0.3s;
   transform: scale(0.98);
 }
 .card-image:active {
-  transition: all 0.25s;
+  transition: all 0.3s;
   transform: scale(0.9);
 }
 

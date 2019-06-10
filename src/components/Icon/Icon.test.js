@@ -6,10 +6,6 @@ const wrapper = shallowMount(Icon, {
   propsData: { icon }
 })
 
-test("Icon", () => {
-  expect(wrapper.vm.icon).toBe(icon)
-})
-
 test("Icon Spapshot", () => {
   expect(wrapper).toMatchInlineSnapshot(`
 <div class="icon">

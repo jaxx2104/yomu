@@ -1,14 +1,7 @@
 <template>
   <div class="item">
-    <Icon
-      v-if="isEdit"
-      icon="times-circle"
-      @action="$emit('delete', index)"
-    />
-    <span
-      class="info"
-      @click="$emit('select', index)"
-    >
+    <Icon v-if="isEdit" icon="times-circle" @action="$emit('delete', index)" />
+    <span class="info" @click="$emit('select', index)">
       <div class="title">{{ title }}</div>
       <div class="desc">{{ desc }}</div>
     </span>
@@ -23,7 +16,7 @@
 </template>
 
 <script>
-import Icon from "~/src/components/Icon"
+import Icon from "@/components/Icon"
 
 export default {
   name: "ListItem",

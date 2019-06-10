@@ -1,22 +1,14 @@
 <template>
-  <button
-    :class="className"
-    @click="$emit('action')">
+  <button :class="className" @click="$emit('action')">
     {{ label }}
   </button>
 </template>
 <script>
 export default {
-  components: {},
   props: {
     className: { type: String, default: "" },
     label: { type: String, default: "" }
-  },
-  data() {
-    return {}
-  },
-  computed: {},
-  methods: {}
+  }
 }
 </script>
 
