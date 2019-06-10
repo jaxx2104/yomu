@@ -3,15 +3,10 @@
     <div class="card-info">
       {{ title }}
     </div>
-    <transition-group
-      name="fade"
-      class="card-column"
-      tag="div"
-      appear
-    >
+    <transition-group name="fade" class="card-column" tag="div" appear>
       <Card
         v-for="(item, index) in items"
-        :key="index"
+        :key="index + 1"
         :row="row"
         :column="index"
         :title="item.title"
@@ -24,7 +19,8 @@
 
 <script>
 import { mapActions } from "vuex"
-import Card from "~/src/components/Card"
+
+import Card from "@/components/Card"
 
 export default {
   components: {

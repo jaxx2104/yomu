@@ -8,7 +8,7 @@
   >
     <CardList
       v-for="(entry, index) in entries"
-      :key="index"
+      :key="index + 1"
       :row="index"
       :title="entry.title"
       :items="entry.items"
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CardList from "~/src/components/CardList"
+import CardList from "@/components/CardList.vue"
 import { mapState } from "vuex"
 
 export default {

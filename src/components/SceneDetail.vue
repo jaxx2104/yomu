@@ -1,47 +1,26 @@
 <template>
-  <transition
-    name="fade"
-    appear
-  >
-    <div
-      class="scene-detail"
-    >
-      <img
-        v-lazy="thumb"
-        :class="{'close': isClose}"
-        class="detail-image"
-      >
-      <img
-        v-lazy="thumb"
-        class="dummy-image"
-      >
-      <transition
-        name="slide"
-        tag="div"
-        appear
-      >
-        <div class="detail-wrap">
-          <div class="detail-info">
-            <h1 class="detail-title">{{ detail ? detail.title : title }}</h1>
-            <time class="detail-date">{{ detail ? detail.date : date }}</time>
-          </div>
-          <div
-            class="detail-content article"
-            v-html="detail ? detail.content : content"
-          />
-          <Button
-            label="MORE"
-            @action="onMore"
-          />
+  <transition name="slide" tag="div">
+    <div class="scene-detail" v-show="isShow">
+      <img :src="thumb" :style="styles" class="detail-image" />
+      <img :src="thumb" :style="dummyStyles" class="dummy-image" />
+      <div class="detail-wrap">
+        <div class="detail-info">
+          <h1 class="detail-title">
+            {{ detail ? detail.title : "" }}
+          </h1>
+          <time class="detail-date">{{ detail ? detail.date : "" }}</time>
         </div>
-      </transition>
+        <div class="detail-content article" v-html="content" />
+        <Button label="MORE" @action="onMore" />
+      </div>
     </div>
   </transition>
 </template>
 
 <script>
-import { mapGetters } from "vuex"
-import Button from "~/src/components/Button"
+import { mapState, mapActions, mapGetters } from "vuex"
+
+import Button from "@/components/Button"
 
 export default {
   components: {
@@ -49,44 +28,69 @@ export default {
   },
   data() {
     return {
-      isClose: false,
-      image: "load.jpg",
-      title: "これはサンプルテキストです",
-      link: "http://localhost:3000/",
-      date: "2018-05-02T15:08:21Z",
-      content: "<p>hogehoge</p><h2>subtitle</h2><p>hogehoge</p><p>hogehoge</p>"
+      opacity: 1.0,
+      scrollY: 30
     }
   },
   computed: {
+    ...mapState("entries", ["select"]),
     ...mapGetters("entries", {
-      detail: "currentEntry"
+      detail: "currentEntry",
+      content: "currentContent",
+      thumb: "currentThumb"
     }),
-    thumb() {
-      return this.detail ? this.detail.image : this.image
+    isShow() {
+      if (this.select) {
+        this.initScroll(this.scrollY)
+        this.setScroll(this.scrollY)
+        this.setScroll2()
+      } else {
+        this.initScroll(0)
+      }
+      return this.select
+    },
+    styles() {
+      const opacity = this.opacity
+      return { opacity }
+    },
+    dummyStyles() {
+      return { "min-height": this.thumb ? "" : "500px" }
     }
   },
-  mounted() {
-    const scrollY = 40
-    // とじる場合の挙動
-    window.addEventListener("scroll", () => {
-      this.isClose = scrollY > window.scrollY
-      if (window.scrollY === 0) {
-        this.$emit("close")
-      }
-    })
-    // 初期のスクロール位置
-    window.scroll({
-      top: scrollY,
-      behavior: "smooth"
-    })
-  },
   methods: {
-    onMore() {
-      window.open(this.detail ? this.detail.link : this.link)
+    ...mapActions("entries", ["setSelect"]),
+
+    // 初期のスクロール位置
+    initScroll(top) {
+      setTimeout(() => {
+        window.scroll({ top, behavior: "smooth" })
+      }, 300)
     },
-    onPress() {
-      /* eslint-disable-next-line no-console */
-      console.log("onTap")
+
+    // とじる場合の挙動
+    setScroll(top) {
+      const span = 100 / top
+      const listener = () => {
+        const opacity = (window.scrollY * span) / 100
+        if (opacity <= 1) {
+          this.opacity = opacity
+        }
+      }
+      window.removeEventListener("scroll", listener)
+      window.addEventListener("scroll", listener)
+    },
+
+    setScroll2() {
+      const listener2 = () => {
+        if (window.scrollY <= 0) {
+          this.setSelect(null)
+        }
+      }
+      window.removeEventListener("scroll", listener2)
+      window.addEventListener("scroll", listener2)
+    },
+    onMore() {
+      window.open(this.detail ? this.detail.link : "")
     }
   }
 }
@@ -94,7 +98,10 @@ export default {
 
 <style scoped>
 .scene-detail {
+  background-color: #fff;
   position: absolute;
+  top: 72px;
+  width: 100%;
 }
 
 .detail-image {
@@ -104,20 +111,16 @@ export default {
   width: 100%;
 }
 
-.close {
-  opacity: 0.75;
-}
-
 .dummy-image {
   margin: -2px 0;
   opacity: 0;
-  background-color: #fff;
+  width: 100%;
 }
 
 .detail-wrap {
   filter: drop-shadow(-15px 0px 40px rgba(0, 0, 0, 0.6));
   background-color: #fff;
-  padding: 16px;
+  padding: 24px;
 }
 
 .detail-info {
@@ -139,6 +142,7 @@ export default {
 .detail-content {
   font-weight: 300;
   padding: 12px 0;
-  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 </style>
