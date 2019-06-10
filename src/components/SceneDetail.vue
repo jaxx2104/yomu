@@ -47,6 +47,8 @@ export default {
     isShow() {
       this.initScroll()
       this.setScroll()
+      this.setScroll2()
+
       return this.select
     },
     thumb() {
@@ -78,12 +80,19 @@ export default {
         if (opacity <= 1) {
           this.opacity = opacity
         }
+      }
+      window.removeEventListener("scroll", listener)
+      window.addEventListener("scroll", listener)
+    },
+
+    setScroll2() {
+      const listener2 = () => {
         if (window.scrollY <= 0) {
           this.setSelect(null)
         }
       }
-      window.removeEventListener("scroll", listener)
-      window.addEventListener("scroll", listener)
+      window.removeEventListener("scroll", listener2)
+      window.addEventListener("scroll", listener2)
     },
     onMore() {
       window.open(this.detail ? this.detail.link : this.link)
@@ -94,6 +103,7 @@ export default {
 
 <style scoped>
 .scene-detail {
+  background-color: #fff;
   position: absolute;
   top: 72px;
   width: 100%;
@@ -113,7 +123,6 @@ export default {
 .dummy-image {
   margin: -2px 0;
   opacity: 0;
-  background-color: #fff;
   width: 100%;
 }
 

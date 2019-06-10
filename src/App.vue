@@ -53,21 +53,20 @@ html {
 }
 
 .slide-enter-active {
-  top: 0;
   opacity: 1;
-  position: relative;
-  transition: 0.6s ease-out;
+  transition-delay: 0.3s;
+  transition: 0.3s ease-out;
 }
 .slide-leave-active {
-  top: 0;
-  opacity: 0.2;
-  position: relative;
+  opacity: 1;
   transition: 0s ease-out;
 }
 .slide-enter,
 .slide-leave-to {
   opacity: 0;
-  top: 0px;
+}
+.slide-move {
+  transition: transform 0.3s;
 }
 
 @keyframes fadeIn {
