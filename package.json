@@ -29,7 +29,7 @@
     "@storybook/addon-knobs": "5.1.8",
     "@storybook/addon-viewport": "5.1.8",
     "@storybook/vue": "5.1.8",
-    "@types/jest": "24.0.14",
+    "@types/jest": "24.0.15",
     "@types/sanitize-html": "1.20.0",
     "@vue/cli-plugin-babel": "3.8.0",
     "@vue/cli-plugin-e2e-cypress": "3.8.0",
