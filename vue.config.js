@@ -1,4 +1,7 @@
+const configureWebpack = require("./webpack.config")
+
 module.exports = {
+  configureWebpack,
   devServer: {
     proxy: {
       "/api": {

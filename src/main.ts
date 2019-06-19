@@ -3,6 +3,7 @@ import App from "./App.vue"
 import router from "./router"
 import store from "./store"
 
+import "./helpers/firebase"
 import "./helpers/serviceworker"
 import "./helpers/vue-fontawesome"
 import "./helpers/vue-lazyload"
