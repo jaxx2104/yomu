@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/vue"
 import { withKnobs, text } from "@storybook/addon-knobs"
 
-import Button from "../components/Button.vue"
+import Button from "../components/Button.tsx"
 
 storiesOf("atoms", module)
   .addDecorator(withKnobs)
