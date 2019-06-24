@@ -57,9 +57,11 @@
     "typescript": "3.5.2",
     "vue-template-compiler": "2.6.10"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged",
-    "pre-push": "jest"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "jest"
+    }
   },
   "lint-staged": {
     "*.{js,vue}": [
