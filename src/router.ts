@@ -1,5 +1,5 @@
 import Vue from "vue"
-import Router from "vue-router"
+import Router, { RouterMode, RouterOptions } from "vue-router"
 import Home from "./views/home.vue"
 
 const Search = () =>
@@ -7,8 +7,8 @@ const Search = () =>
 
 Vue.use(Router)
 
-export default new Router({
-  mode: "history",
+const options: RouterOptions = {
+  mode: "history" as RouterMode,
   base: process.env.BASE_URL,
   routes: [
     {
@@ -22,4 +22,6 @@ export default new Router({
       component: Search
     }
   ]
-})
+}
+
+export default new Router(options)
