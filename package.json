@@ -46,7 +46,7 @@
     "babel-eslint": "10.0.2",
     "eslint": "5.16.0",
     "eslint-plugin-vue": "5.2.3",
-    "husky": "2.5.0",
+    "husky": "2.6.0",
     "lint-staged": "8.2.1",
     "sass": "1.22.0",
     "sass-loader": "7.1.0",
