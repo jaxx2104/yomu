@@ -2,23 +2,22 @@ import styled from "vue-styled-components"
 import Vue from "vue"
 
 const StyledButton = styled.div`
-  background-color: transparent;
-  background-image: none;
-  border: 1px #e91e63 solid;
+  background-position: center;
   border-radius: 0.25rem;
+  border: 1px #e91e63 solid;
   color: #e91e63;
   display: inline-block;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  padding: 0.5rem 0.75rem;
   margin: 0.375rem;
+  padding: 0.5rem 0.75rem;
   text-align: center;
+  transition: background 0.8s;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   width: 100%;
-  transition: 0.8s;
 
   :hover {
     color: #fff;

@@ -13,7 +13,7 @@
 
 <script>
 import { mapGetters } from "vuex"
-import Button from "@/components/Button"
+import Button from "@/components/Button.tsx"
 
 export default {
   name: "Searchbar",
