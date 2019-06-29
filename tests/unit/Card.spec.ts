@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils"
-import Card from "./Card.vue"
+import Card from "../../src/components/Card.vue"
 
 const title = "title"
 const wrapper = shallowMount(Card, {
@@ -7,14 +7,16 @@ const wrapper = shallowMount(Card, {
 })
 
 test("Card", () => {
-  expect(wrapper.vm.title).toBe(title)
+  expect(wrapper.props().title).toBe(title)
 })
 
 test("Card Spapshot", () => {
   expect(wrapper).toMatchInlineSnapshot(`
 <div class="card-tile">
   <div class="card-image">
-    <h2 class="card-title">title</h2>
+    <h2 class="card-title">
+      title
+    </h2>
   </div>
 </div>
 `)

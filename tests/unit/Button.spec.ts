@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils"
-import Button from "./Button.vue"
+import Button from "../../src/components/Button.vue"
 
 const label = "label"
 const wrapper = shallowMount(Button, {
@@ -7,7 +7,7 @@ const wrapper = shallowMount(Button, {
 })
 
 test("Button", () => {
-  expect(wrapper).toBe(label)
+  expect(wrapper.props().label).toBe(label)
 })
 
 test("Button Spapshot", () => {
