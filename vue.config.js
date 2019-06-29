@@ -35,7 +35,7 @@ module.exports = {
           handler: "cacheFirst",
           options: {
             cacheName: "assets",
-            cacheExpiration: {
+            expiration: {
               maxAgeSeconds: 86400 * 7,
               maxEntries: 1000
             }
