@@ -17,6 +17,7 @@ module.exports = {
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/member-delimiter-style": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/prefer-interface": "off",
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
     "prettier/prettier": ["error", { semi: false }]
