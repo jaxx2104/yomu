@@ -24,7 +24,7 @@ module.exports = {
       ],
       runtimeCaching: [
         {
-          urlPattern: /.*firebase.*/,
+          urlPattern: /api/,
           handler: "networkFirst",
           options: {
             cacheName: "api"
