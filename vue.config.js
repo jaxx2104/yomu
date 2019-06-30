@@ -31,7 +31,7 @@ module.exports = {
           }
         },
         {
-          urlPattern: /.+\.(png|gif|jpg|jpeg|svg)$/,
+          urlPattern: /\.(png|gif|jpg|jpeg|svg)/,
           handler: "cacheFirst",
           options: {
             cacheName: "assets",
