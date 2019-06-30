@@ -1,6 +1,6 @@
 <template>
   <div class="card-tile" @click="onClick">
-    <div :key="image" v-lazy:background-image="image" class="card-image">
+    <div :key="image" :style="styles" class="card-image">
       <h2 class="card-title">
         {{ title }}
       </h2>
@@ -26,6 +26,12 @@ export default {
     image: {
       type: String,
       default: "/img/load.jpg"
+    }
+  },
+  computed: {
+    styles() {
+      const backgroundImage = `url(${this.image})`
+      return { backgroundImage }
     }
   },
   methods: {
