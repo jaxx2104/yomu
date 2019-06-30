@@ -1,9 +1,10 @@
 module.exports = {
   moduleFileExtensions: ["js", "jsx", "json", "vue", "ts", "tsx"],
-  preset: "ts-jest",
   transform: {
-    "^.+\\.vue$": "<rootDir>/node_modules/vue-jest",
-    "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    "^.+\\.vue$": "vue-jest",
+    ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$":
+      "jest-transform-stub",
+    "^.+\\.tsx?$": "ts-jest"
   },
   transformIgnorePatterns: ["/node_modules/"],
   moduleNameMapper: {
@@ -17,5 +18,10 @@ module.exports = {
   watchPlugins: [
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
-  ]
+  ],
+  globals: {
+    "ts-jest": {
+      babelConfig: true
+    }
+  }
 }
