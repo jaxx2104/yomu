@@ -1,6 +1,6 @@
 <template>
   <div class="card-tile" @click="onClick">
-    <div :key="image" v-lazy:background-image="image" class="card-image">
+    <div :key="image" :style="styles" class="card-image">
       <h2 class="card-title">
         {{ title }}
       </h2>
@@ -28,6 +28,12 @@ export default {
       default: "/img/load.jpg"
     }
   },
+  computed: {
+    styles() {
+      const backgroundImage = `url(${this.image})`
+      return { backgroundImage }
+    }
+  },
   methods: {
     onClick() {
       this.$emit("action", {
@@ -45,7 +51,6 @@ export default {
   width: auto;
   padding: 2px;
 }
-
 .card-image {
   width: 200px;
   height: 200px;
@@ -54,7 +59,6 @@ export default {
   background-position: center;
   transition: all 0.3s;
 }
-
 .card-image:hover {
   transition: all 0.3s;
   transform: scale(0.98);
@@ -63,7 +67,6 @@ export default {
   transition: all 0.3s;
   transform: scale(0.9);
 }
-
 .card-title {
   color: white;
   filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 1));
@@ -72,20 +75,17 @@ export default {
   padding: 8px;
   user-select: none;
 }
-
 @media screen and (max-width: 768px) {
   .card-image {
     width: 120px;
     height: 120px;
   }
-
   .card-title {
     padding: 4px;
     font-size: 0.75rem;
     line-height: 1rem;
   }
 }
-
 .card-image[lazy="loaded"] {
   animation-duration: 1.5s;
   animation-fill-mode: both;
