@@ -30,7 +30,8 @@ export default {
   },
   computed: {
     styles() {
-      const backgroundImage = `url(${this.image})`
+      const image = this.image.replace(/^http:\/\//i, "https://")
+      const backgroundImage = `url(${image})`
       return { backgroundImage }
     }
   },
