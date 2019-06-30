@@ -31,13 +31,12 @@ module.exports = {
           }
         },
         {
-          urlPattern: /\.(png|svg|jpg|gif|svg|woff|ttf|eot)/,
+          urlPattern: /.+\.(png|gif|jpg|jpeg|svg)$/,
           handler: "cacheFirst",
           options: {
             cacheName: "assets",
             expiration: {
-              maxAgeSeconds: 86400 * 7,
-              maxEntries: 1000
+              maxAgeSeconds: 60 * 60 * 24 * 30
             }
           }
         }
