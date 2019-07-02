@@ -13,7 +13,7 @@ test("Card", () => {
 test("Card Spapshot", () => {
   expect(wrapper).toMatchInlineSnapshot(`
 <div class="card-tile">
-  <div class="card-image" style="background-image: url(/img/load.jpg);">
+  <div class="card-image">
     <h2 class="card-title">
       title
     </h2>
