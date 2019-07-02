@@ -1,6 +1,6 @@
 <template>
   <div class="card-tile" @click="onClick">
-    <div :key="image" :style="styles" class="card-image">
+    <div :key="image" v-lazy:background-image="_image" class="card-image">
       <h2 class="card-title">
         {{ title }}
       </h2>
@@ -29,10 +29,9 @@ export default {
     }
   },
   computed: {
-    styles() {
+    _image() {
       const image = this.image.replace(/^http:\/\//i, "https://")
-      const backgroundImage = `url(${image})`
-      return { backgroundImage }
+      return image
     }
   },
   methods: {
@@ -53,12 +52,26 @@ export default {
   padding: 2px;
 }
 .card-image {
-  width: 200px;
-  height: 200px;
   background-color: #ddd;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  position: relative;
+
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  height: 200px;
   transition: all 0.3s;
+  width: 200px;
+}
+.card-image::before {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  border-radius: 8px;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .card-image:hover {
   transition: all 0.3s;
@@ -69,8 +82,9 @@ export default {
   transform: scale(0.9);
 }
 .card-title {
-  color: white;
+  color: #fff;
   filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 1));
+  word-wrap: break-word;
   font-size: 1rem;
   line-height: 1.25rem;
   padding: 8px;
