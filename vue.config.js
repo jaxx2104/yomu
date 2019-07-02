@@ -25,9 +25,12 @@ module.exports = {
       runtimeCaching: [
         {
           urlPattern: /api/,
-          handler: "networkFirst",
+          handler: "cacheFirst",
           options: {
-            cacheName: "api"
+            cacheName: "api",
+            expiration: {
+              maxAgeSeconds: 60 * 60 * 1
+            }
           }
         },
         {
