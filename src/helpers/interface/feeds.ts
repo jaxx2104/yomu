@@ -22,4 +22,7 @@ export interface FetchItem {
     content: string
   }
   summary: string
+  visual: {
+    url: string
+  }
 }
