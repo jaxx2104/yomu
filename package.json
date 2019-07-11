@@ -34,7 +34,7 @@
     "@storybook/addon-viewport": "5.1.9",
     "@storybook/vue": "5.1.9",
     "@types/jest": "24.0.15",
-    "@types/sanitize-html": "1.20.0",
+    "@types/sanitize-html": "1.20.1",
     "@vue/cli-plugin-babel": "3.9.2",
     "@vue/cli-plugin-e2e-cypress": "3.9.0",
     "@vue/cli-plugin-eslint": "3.9.2",

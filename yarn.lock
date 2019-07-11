@@ -1657,10 +1657,10 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
-"@types/sanitize-html@1.20.0":
-  version "1.20.0"
-  resolved "https://registry.yarnpkg.com/@types/sanitize-html/-/sanitize-html-1.20.0.tgz#b3beaa9eacab0e0fa5022d5faa727fea8fb9fc5d"
-  integrity sha512-didHnmdOqYconeLOaHbYK9Y0jEULat5UbblgPUmwTJCEU7gA9AW1m9Zsi4h5gMFP56zAWRuAnH42D/h1zwZr+Q==
+"@types/sanitize-html@1.20.1":
+  version "1.20.1"
+  resolved "https://registry.yarnpkg.com/@types/sanitize-html/-/sanitize-html-1.20.1.tgz#6a64f98ca1589df2ed85ac725f53097a03b12981"
+  integrity sha512-WGFp6QuYUGaPl+WUfU4VYMYPx6buO9hfKkdeHCazjUzr0LlnrCKBjfKXiU+ra/JasDDALmtSGmOCtOT1iduQtQ==
   dependencies:
     "@types/htmlparser2" "*"
 
