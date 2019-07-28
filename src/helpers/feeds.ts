@@ -1,5 +1,6 @@
 import axios from "axios"
 import { stringify } from "query-string"
+
 import rss from "../assets/rss.json"
 import { SearchResults, FetchResults } from "./interface/feeds"
 

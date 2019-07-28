@@ -1,4 +1,5 @@
 import { shallowMount } from "@vue/test-utils"
+
 import Card from "../../src/components/Card.vue"
 import "../../src/helpers/vue-lazyload"
 

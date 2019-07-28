@@ -27,9 +27,9 @@
 <script>
 import Draggable from "vuedraggable"
 
-import { searchComputed, searchActions } from "@/store/helpers.ts"
-import ListItem from "@/components/ListItem.vue"
-import Searchbar from "@/components/Searchbar.vue"
+import { searchComputed, searchActions } from "../store/helpers.ts"
+import ListItem from "../components/ListItem.vue"
+import Searchbar from "../components/Searchbar.vue"
 
 export default {
   components: {

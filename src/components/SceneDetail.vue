@@ -20,7 +20,7 @@
 <script>
 import { mapState, mapActions, mapGetters } from "vuex"
 
-import Button from "@/components/Button.tsx"
+import Button from "./Button.tsx"
 
 export default {
   components: {

@@ -1,4 +1,5 @@
 import { shallowMount } from "@vue/test-utils"
+
 import Button from "../../src/components/Button.vue"
 
 const label = "label"

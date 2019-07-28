@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import { homeComputed, homeActions } from "@/store/helpers.ts"
-import SceneList from "@/components/SceneList.vue"
-import SceneDetail from "@/components/SceneDetail.vue"
+import { homeComputed, homeActions } from "../store/helpers"
+import SceneList from "../components/SceneList.vue"
+import SceneDetail from "../components/SceneDetail.vue"
 
 export default {
   components: {

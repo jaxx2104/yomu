@@ -3,8 +3,8 @@ import { GetterTree, MutationTree, ActionTree, Module } from "vuex"
 import { RootState } from "../types"
 import { State } from "./types"
 import * as types from "../mutation-types"
-import defaultFeeds from "@/assets/feeds.json"
-import storage from "@/helpers/storage"
+import defaultFeeds from "../../assets/feeds.json"
+import storage from "../../helpers/storage"
 
 const state: State = {
   isPrimary: true,
