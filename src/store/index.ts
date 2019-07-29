@@ -22,7 +22,7 @@ const mutations: MutationTree<RootState> = {
 
 const actions = {}
 
-export const store: StoreOptions<RootState> = {
+export const options: StoreOptions<RootState> = {
   state,
   getters,
   mutations,
@@ -33,5 +33,5 @@ export const store: StoreOptions<RootState> = {
     search
   }
 }
-
-export default new Vuex.Store<RootState>(store)
+const store = new Vuex.Store<RootState>(options)
+export default store

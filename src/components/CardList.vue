@@ -20,7 +20,7 @@
 <script>
 import { mapActions } from "vuex"
 
-import Card from "@/components/Card"
+import Card from "./Card.vue"
 
 export default {
   components: {

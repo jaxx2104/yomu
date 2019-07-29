@@ -1,8 +1,8 @@
 import { Module, GetterTree, MutationTree, ActionTree } from "vuex"
 
 import { RootState } from "../types"
-import { search as fetchSearch } from "@/helpers/feeds"
-import { search as formatSearch } from "@/helpers/format"
+import { search as fetchSearch } from "../../helpers/feeds"
+import { search as formatSearch } from "../../helpers/format"
 import { State } from "./types"
 import * as types from "../mutation-types"
 

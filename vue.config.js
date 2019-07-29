@@ -1,5 +1,6 @@
-const configureWebpack = require("./webpack.config")
 const path = require("path")
+
+const configureWebpack = require("./webpack.config")
 
 module.exports = {
   configureWebpack,

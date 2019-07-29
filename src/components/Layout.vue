@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import { commonComputed, commonActions } from "@/store/helpers.ts"
+import { commonComputed, commonActions } from "../store/helpers.ts"
 
-import Loading from "@/components/Loading.vue"
-import Navbar from "@/components/Navbar.vue"
+import Loading from "./Loading.vue"
+import Navbar from "./Navbar.vue"
 
 export default {
   components: {

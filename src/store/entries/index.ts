@@ -1,9 +1,9 @@
 import { GetterTree, MutationTree, ActionTree, Module } from "vuex"
 import sanitize from "sanitize-html"
 
-import { entries as formatEntries } from "@/helpers/format"
-import { fetch } from "@/helpers/feeds"
-import { FetchResults } from "@/helpers/interface/feeds"
+import { entries as formatEntries } from "../../helpers/format"
+import { fetch } from "../../helpers/feeds"
+import { FetchResults } from "../../helpers/interface/feeds"
 import { RootState } from "../types"
 import { State, Feed } from "./types"
 import * as types from "../mutation-types"

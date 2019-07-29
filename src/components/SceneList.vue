@@ -17,8 +17,9 @@
 </template>
 
 <script>
-import CardList from "@/components/CardList.vue"
 import { mapState } from "vuex"
+
+import CardList from "./CardList.vue"
 
 export default {
   name: "SceneList",

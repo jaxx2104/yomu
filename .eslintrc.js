@@ -7,6 +7,8 @@ module.exports = {
   extends: [
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/essential",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "@vue/prettier",
     "@vue/typescript"
   ],
@@ -20,7 +22,18 @@ module.exports = {
     "@typescript-eslint/prefer-interface": "off",
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "prettier/prettier": ["error", { semi: false }]
+    "prettier/prettier": "error",
+    complexity: "error",
+    "import/order": [
+      "error",
+      {
+        groups: [
+          ["builtin", "external", "internal"],
+          ["parent", "sibling", "index"]
+        ],
+        "newlines-between": "always-and-inside-groups"
+      }
+    ]
   },
   parserOptions: {
     parser: "@typescript-eslint/parser"

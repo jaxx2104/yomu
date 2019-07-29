@@ -1,7 +1,8 @@
 import { shallowMount } from "@vue/test-utils"
-import Icon from "@/components/Icon.vue"
 
+import "../../src/helpers/vue-lazyload"
 import "../../src/helpers/vue-fontawesome"
+import Icon from "../../src/components/Icon.vue"
 
 const icon = "search"
 const wrapper = shallowMount(Icon, {
