@@ -12,8 +12,8 @@
     "e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "1.2.19",
-    "@fortawesome/free-solid-svg-icons": "5.9.0",
+    "@fortawesome/fontawesome-svg-core": "1.2.21",
+    "@fortawesome/free-solid-svg-icons": "5.10.1",
     "@fortawesome/vue-fontawesome": "0.1.6",
     "axios": "0.19.0",
     "core-js": "3.1.4",
