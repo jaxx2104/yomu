@@ -16,7 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "5.10.1",
     "@fortawesome/vue-fontawesome": "0.1.6",
     "axios": "0.19.0",
-    "core-js": "3.2.0",
+    "core-js": "3.2.1",
     "firebase": "6.3.5",
     "localforage": "1.7.3",
     "query-string": "6.8.2",
