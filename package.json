@@ -30,9 +30,9 @@
     "vuex": "3.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-knobs": "5.1.11",
-    "@storybook/addon-viewport": "5.1.11",
-    "@storybook/vue": "5.1.11",
+    "@storybook/addon-knobs": "5.2.0",
+    "@storybook/addon-viewport": "5.2.0",
+    "@storybook/vue": "5.2.0",
     "@types/jest": "24.0.18",
     "@types/sanitize-html": "1.20.1",
     "@types/storybook__vue": "5.0.2",
@@ -49,16 +49,16 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
-    "eslint": "6.3.0",
+    "eslint": "6.4.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-vue": "5.2.3",
     "husky": "3.0.5",
     "lint-staged": "9.2.5",
-    "sass": "1.22.10",
+    "sass": "1.22.12",
     "sass-loader": "7.3.1",
-    "ts-jest": "24.0.2",
-    "typescript": "3.6.2",
+    "ts-jest": "24.1.0",
+    "typescript": "3.6.3",
     "vue-template-compiler": "2.6.10"
   },
   "husky": {
