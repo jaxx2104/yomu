@@ -9355,6 +9355,11 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
+lodash.zipobject@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/lodash.zipobject/-/lodash.zipobject-4.1.3.tgz#b399f5aba8ff62a746f6979bf20b214f964dbef8"
+  integrity sha1-s5n1q6j/YqdG9peb8gshT5ZNvvg=
+
 lodash@4.17.11, lodash@4.x, lodash@^4.0.1, lodash@^4.14.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
@@ -13420,10 +13425,10 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
-stylis@^2.0.3:
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/stylis/-/stylis-2.0.12.tgz#547253055d170f2a7ac2f6d09365d70635f2bec6"
-  integrity sha1-VHJTBV0XDyp6wvbQk2XXBjXyvsY=
+stylis@^3.5.4:
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.5.4.tgz#f665f25f5e299cf3d64654ab949a57c768b73fbe"
+  integrity sha512-8/3pSmthWM7lsPBKv7NXkzn2Uc9W7NotcwGNpJaa3k7WMM1XDCA4MgT5k/8BIexd5ydZdboXtU90XH9Ec4Bv/Q==
 
 supports-color@5.5.0, supports-color@^5.3.0, supports-color@^5.4.0:
   version "5.5.0"
@@ -14307,15 +14312,16 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-styled-components@1.4.9:
-  version "1.4.9"
-  resolved "https://registry.yarnpkg.com/vue-styled-components/-/vue-styled-components-1.4.9.tgz#6d15adb66ed738ce8b21700d14ec92f282a7c504"
-  integrity sha512-wLyngcd3Wb3AAyH3XsOlySx1ZSd7+9Z1C0N0Zjqc7BigFA+8XQnxS+HLAHmEpxZmj/DlvrJAICJsmS4t/F7vvA==
+vue-styled-components@1.4.13:
+  version "1.4.13"
+  resolved "https://registry.yarnpkg.com/vue-styled-components/-/vue-styled-components-1.4.13.tgz#229991a8810d13d7f339ae3cddadd931fd19ea15"
+  integrity sha512-1HOIHxd77ips808qh9Qaf+xDXScEOEs1fB3pXvzIbXb9K3Vz8fcZASojjOfwGepuHcnWIx2auMdQf1Eg/PKwqg==
   dependencies:
     glamor "^2.20.24"
     inline-style-prefixer "^2.0.5"
     lodash.isplainobject "^4.0.6"
-    stylis "^2.0.3"
+    lodash.zipobject "^4.1.3"
+    stylis "^3.5.4"
 
 vue-template-compiler@2.6.10:
   version "2.6.10"

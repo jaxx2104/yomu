@@ -25,7 +25,7 @@
     "vue": "2.6.10",
     "vue-lazyload": "1.3.3",
     "vue-router": "3.1.3",
-    "vue-styled-components": "1.4.9",
+    "vue-styled-components": "1.4.13",
     "vuedraggable": "2.23.2",
     "vuex": "3.1.1"
   },
