@@ -17,7 +17,7 @@
     "@fortawesome/vue-fontawesome": "0.1.9",
     "axios": "0.19.2",
     "core-js": "3.6.4",
-    "firebase": "7.8.0",
+    "firebase": "7.8.1",
     "localforage": "1.7.3",
     "query-string": "6.10.1",
     "register-service-worker": "1.6.2",
