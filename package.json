@@ -19,7 +19,7 @@
     "core-js": "3.6.4",
     "firebase": "7.8.1",
     "localforage": "1.7.3",
-    "query-string": "6.10.1",
+    "query-string": "6.11.0",
     "register-service-worker": "1.6.2",
     "sanitize-html": "1.21.1",
     "vue": "2.6.10",
