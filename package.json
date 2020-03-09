@@ -22,12 +22,12 @@
     "query-string": "6.11.0",
     "register-service-worker": "1.6.2",
     "sanitize-html": "1.21.1",
-    "vue": "2.6.10",
+    "vue": "2.6.11",
     "vue-lazyload": "1.3.3",
-    "vue-router": "3.1.3",
+    "vue-router": "3.1.6",
     "vue-styled-components": "1.4.14",
     "vuedraggable": "2.23.2",
-    "vuex": "3.1.2"
+    "vuex": "3.1.3"
   },
   "devDependencies": {
     "@storybook/addon-knobs": "5.2.7",
